@@ -1,0 +1,12 @@
+{
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/AppConfiguration.swift" : {
+    "abi-baseline-json" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp.abi.json",
+    "const-values" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp-primary.swiftconstvalues",
+    "dependencies" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp-primary.d",
+    "diagnostics" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp-primary.dia",
+    "objc-header" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp-Swift.h",
+    "swiftdoc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp.swiftdoc",
+    "swiftmodule" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp.swiftmodule",
+    "swiftsourceinfo" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/arm64/SwiftTranscriptionSampleApp.swiftsourceinfo"
+  }
+}

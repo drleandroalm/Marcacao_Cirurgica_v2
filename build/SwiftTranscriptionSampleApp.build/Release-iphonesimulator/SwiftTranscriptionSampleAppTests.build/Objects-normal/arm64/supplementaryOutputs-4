@@ -1,0 +1,12 @@
+{
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleAppTests/ComplianceValidatorTests.swift" : {
+    "abi-baseline-json" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests.abi.json",
+    "const-values" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests-primary.swiftconstvalues",
+    "dependencies" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests-primary.d",
+    "diagnostics" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests-primary.dia",
+    "objc-header" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests-Swift.h",
+    "swiftdoc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests.swiftdoc",
+    "swiftmodule" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests.swiftmodule",
+    "swiftsourceinfo" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleAppTests.build/Objects-normal/arm64/SwiftTranscriptionSampleAppTests.swiftsourceinfo"
+  }
+}

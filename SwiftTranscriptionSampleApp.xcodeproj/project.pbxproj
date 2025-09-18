@@ -6,15 +6,38 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		320C19B72E6FBDD700F75DD8 /* FoundationModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320C19B52E6FBDC700F75DD8 /* FoundationModels.framework */; };
+		320C19BB2E6FBDF100F75DD8 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320C19BA2E6FBDF100F75DD8 /* Speech.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA0000192DA2E84500A2A2CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56177C742DA2E84500A2A2BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56177C7B2DA2E84500A2A2BB;
+			remoteInfo = SwiftTranscriptionSampleApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		320C19B52E6FBDC700F75DD8 /* FoundationModels.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoundationModels.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/FoundationModels.framework; sourceTree = DEVELOPER_DIR; };
+		320C19BA2E6FBDF100F75DD8 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Speech.framework; sourceTree = DEVELOPER_DIR; };
 		56177C7C2DA2E84500A2A2BB /* SwiftTranscriptionSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTranscriptionSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785079145B6CEF6E2D011C0E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AA0000112DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTranscriptionSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		56177C7E2DA2E84500A2A2BB /* SwiftTranscriptionSampleApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftTranscriptionSampleApp;
+			sourceTree = "<group>";
+		};
+		AA0000102DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftTranscriptionSampleAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -24,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320C19BB2E6FBDF100F75DD8 /* Speech.framework in Frameworks */,
+				320C19B72E6FBDD700F75DD8 /* FoundationModels.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000142DA2E84500A2A2CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320C19B42E6FBDC700F75DD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				320C19BA2E6FBDF100F75DD8 /* Speech.framework */,
+				320C19B52E6FBDC700F75DD8 /* FoundationModels.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		56177C732DA2E84500A2A2BB = {
 			isa = PBXGroup;
 			children = (
 				785079145B6CEF6E2D011C0E /* README.md */,
 				56177C7E2DA2E84500A2A2BB /* SwiftTranscriptionSampleApp */,
+				AA0000102DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests */,
+				320C19B42E6FBDC700F75DD8 /* Frameworks */,
 				56177C7D2DA2E84500A2A2BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				56177C7C2DA2E84500A2A2BB /* SwiftTranscriptionSampleApp.app */,
+				AA0000112DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +114,27 @@
 			productReference = 56177C7C2DA2E84500A2A2BB /* SwiftTranscriptionSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AA0000122DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0000162DA2E84500A2A2CC /* Build configuration list for PBXNativeTarget "SwiftTranscriptionSampleAppTests" */;
+			buildPhases = (
+				AA0000132DA2E84500A2A2CC /* Sources */,
+				AA0000142DA2E84500A2A2CC /* Frameworks */,
+				AA0000152DA2E84500A2A2CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA00001A2DA2E84500A2A2CC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AA0000102DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests */,
+			);
+			name = SwiftTranscriptionSampleAppTests;
+			productName = SwiftTranscriptionSampleAppTests;
+			productReference = AA0000112DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +147,9 @@
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					56177C7B2DA2E84500A2A2BB = {
+						CreatedOnToolsVersion = 17.0;
+					};
+					AA0000122DA2E84500A2A2CC = {
 						CreatedOnToolsVersion = 17.0;
 					};
 				};
@@ -100,12 +168,20 @@
 			projectRoot = "";
 			targets = (
 				56177C7B2DA2E84500A2A2BB /* SwiftTranscriptionSampleApp */,
+				AA0000122DA2E84500A2A2CC /* SwiftTranscriptionSampleAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		56177C7A2DA2E84500A2A2BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0000152DA2E84500A2A2CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +198,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA0000132DA2E84500A2A2CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA00001A2DA2E84500A2A2CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56177C7B2DA2E84500A2A2BB /* SwiftTranscriptionSampleApp */;
+			targetProxy = AA0000192DA2E84500A2A2CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		56177C9D2DA2E84700A2A2BB /* Debug */ = {
@@ -250,18 +341,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftTranscriptionSampleApp/SwiftTranscriptionSampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C3Y254HR6B;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = YES;
-				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
 				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
 				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
 				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
@@ -292,12 +384,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphonesimulator;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -307,18 +399,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftTranscriptionSampleApp/SwiftTranscriptionSampleApp.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C3Y254HR6B;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = YES;
-				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
 				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
 				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
 				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
@@ -349,13 +442,55 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphonesimulator;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA0000172DA2E84500A2A2CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C3Y254HR6B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SwiftTranscriptionSampleAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftTranscriptionSampleApp.app/SwiftTranscriptionSampleApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTranscriptionSampleApp.app/SwiftTranscriptionSampleApp";
+			};
+			name = Debug;
+		};
+		AA0000182DA2E84500A2A2CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C3Y254HR6B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SwiftTranscriptionSampleAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftTranscriptionSampleApp.app/SwiftTranscriptionSampleApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTranscriptionSampleApp.app/SwiftTranscriptionSampleApp";
 			};
 			name = Release;
 		};
@@ -376,6 +511,15 @@
 			buildConfigurations = (
 				56177CA02DA2E84700A2A2BB /* Debug */,
 				56177CA12DA2E84700A2A2BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000162DA2E84500A2A2CC /* Build configuration list for PBXNativeTarget "SwiftTranscriptionSampleAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000172DA2E84500A2A2CC /* Debug */,
+				AA0000182DA2E84500A2A2CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,643 @@
+[
+  {
+    "canonical": "RTU de Bexiga",
+    "abbreviations": [
+      "RTU vesical",
+      "RTU",
+      "R T U",
+      "RD"
+    ],
+    "spokenVariations": [
+      "RTU bexiga",
+      "ressecção transuretral de bexiga",
+      "RTU da bexiga",
+      "rd de bexiga",
+      "r d de bexiga"
+    ],
+    "components": [
+      "RTU",
+      "bexiga"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      90
+    ]
+  },
+  {
+    "canonical": "RTU de Próstata",
+    "abbreviations": [
+      "RTUP"
+    ],
+    "spokenVariations": [
+      "RTU próstata",
+      "ressecção transuretral de próstata",
+      "RTU da próstata"
+    ],
+    "components": [
+      "RTU",
+      "próstata"
+    ],
+    "typicalDurationMinutes": [
+      60,
+      120
+    ]
+  },
+  {
+    "canonical": "RTU de Colo Vesical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "RTU colo",
+      "ressecção transuretral de colo vesical"
+    ],
+    "components": [
+      "RTU",
+      "colo",
+      "vesical"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      60
+    ]
+  },
+  {
+    "canonical": "Orquiectomia Subcapsular Bilateral",
+    "abbreviations": [
+      "OSC",
+      "OSC bilateral"
+    ],
+    "spokenVariations": [
+      "orquiectomia bilateral",
+      "OSC",
+      "orquiectomia subcapsular"
+    ],
+    "components": [
+      "orquiectomia",
+      "subcapsular",
+      "bilateral"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      60
+    ]
+  },
+  {
+    "canonical": "Orquiectomia Radical Unilateral",
+    "abbreviations": [],
+    "spokenVariations": [
+      "orquiectomia radical",
+      "orquiectomia unilateral"
+    ],
+    "components": [
+      "orquiectomia",
+      "radical",
+      "unilateral"
+    ],
+    "typicalDurationMinutes": [
+      45,
+      90
+    ]
+  },
+  {
+    "canonical": "RTU de Próstata + Orquiectomia Subcapsular Bilateral",
+    "abbreviations": [
+      "RTUP + OSC"
+    ],
+    "spokenVariations": [
+      "RTU próstata mais OSC",
+      "RTU de próstata com orquiectomia bilateral"
+    ],
+    "components": [
+      "RTU",
+      "próstata",
+      "orquiectomia",
+      "subcapsular",
+      "bilateral"
+    ],
+    "typicalDurationMinutes": [
+      90,
+      150
+    ]
+  },
+  {
+    "canonical": "Prostatectomia Radical",
+    "abbreviations": [
+      "PR"
+    ],
+    "spokenVariations": [
+      "prostatectomia",
+      "prostatectomia radical aberta"
+    ],
+    "components": [
+      "prostatectomia",
+      "radical"
+    ],
+    "typicalDurationMinutes": [
+      120,
+      240
+    ]
+  },
+  {
+    "canonical": "Prostatectomia Aberta Millin",
+    "abbreviations": [],
+    "spokenVariations": [
+      "Millin",
+      "prostatectomia Millin",
+      "prostatectomia aberta"
+    ],
+    "components": [
+      "prostatectomia",
+      "aberta",
+      "Millin"
+    ],
+    "typicalDurationMinutes": [
+      90,
+      180
+    ]
+  },
+  {
+    "canonical": "Nefrectomia Radical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefrectomia",
+      "nefrectomia radical aberta"
+    ],
+    "components": [
+      "nefrectomia",
+      "radical"
+    ],
+    "typicalDurationMinutes": [
+      120,
+      240
+    ]
+  },
+  {
+    "canonical": "Nefrectomia Parcial",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefrectomia parcial aberta",
+      "ressecção renal"
+    ],
+    "components": [
+      "nefrectomia",
+      "parcial"
+    ],
+    "typicalDurationMinutes": [
+      120,
+      240
+    ]
+  },
+  {
+    "canonical": "Nefroureterectomia Radical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefroureterectomia",
+      "nefrectomia com ureterectomia"
+    ],
+    "components": [
+      "nefroureterectomia",
+      "radical"
+    ],
+    "typicalDurationMinutes": [
+      180,
+      300
+    ]
+  },
+  {
+    "canonical": "Nefrectomia Parcial VLP",
+    "abbreviations": [
+      "Nefrectomia Parcial Videolaparoscópica"
+    ],
+    "spokenVariations": [
+      "nefrectomia parcial laparoscópica",
+      "nefrectomia parcial VLP"
+    ],
+    "components": [
+      "nefrectomia",
+      "parcial",
+      "VLP",
+      "videolaparoscópica"
+    ],
+    "typicalDurationMinutes": [
+      150,
+      300
+    ]
+  },
+  {
+    "canonical": "Nefrectomia Radical VLP",
+    "abbreviations": [
+      "Nefrectomia Radical Videolaparoscópica"
+    ],
+    "spokenVariations": [
+      "nefrectomia radical laparoscópica",
+      "nefrectomia radical VLP"
+    ],
+    "components": [
+      "nefrectomia",
+      "radical",
+      "VLP",
+      "videolaparoscópica"
+    ],
+    "typicalDurationMinutes": [
+      120,
+      240
+    ]
+  },
+  {
+    "canonical": "Nefroureterectomia Radical VLP",
+    "abbreviations": [
+      "Nefroureterectomia Radical Videolaparoscópica"
+    ],
+    "spokenVariations": [
+      "nefroureterectomia laparoscópica",
+      "nefroureterectomia VLP"
+    ],
+    "components": [
+      "nefroureterectomia",
+      "radical",
+      "VLP",
+      "videolaparoscópica"
+    ],
+    "typicalDurationMinutes": [
+      180,
+      360
+    ]
+  },
+  {
+    "canonical": "Implante de Cateter Duplo J",
+    "abbreviations": [
+      "Duplo J",
+      "DJ"
+    ],
+    "spokenVariations": [
+      "passagem de duplo J",
+      "cateter duplo J",
+      "implante duplo J"
+    ],
+    "components": [
+      "implante",
+      "cateter",
+      "duplo",
+      "J"
+    ],
+    "typicalDurationMinutes": [
+      15,
+      45
+    ]
+  },
+  {
+    "canonical": "Retirada de Cateter Duplo J",
+    "abbreviations": [
+      "Retirada DJ"
+    ],
+    "spokenVariations": [
+      "retirada duplo J",
+      "remoção de duplo J"
+    ],
+    "components": [
+      "retirada",
+      "cateter",
+      "duplo",
+      "J"
+    ],
+    "typicalDurationMinutes": [
+      10,
+      30
+    ]
+  },
+  {
+    "canonical": "Nefrostomia Percutânea Unilateral",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefrostomia",
+      "nefrostomia percutânea"
+    ],
+    "components": [
+      "nefrostomia",
+      "percutânea",
+      "unilateral"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      60
+    ]
+  },
+  {
+    "canonical": "Uretrotomia Interna",
+    "abbreviations": [
+      "UI"
+    ],
+    "spokenVariations": [
+      "uretrotomia",
+      "UI",
+      "uretrotomia interna óptica"
+    ],
+    "components": [
+      "uretrotomia",
+      "interna"
+    ],
+    "typicalDurationMinutes": [
+      15,
+      45
+    ]
+  },
+  {
+    "canonical": "Implante de Prótese Peniana",
+    "abbreviations": [
+      "IPP"
+    ],
+    "spokenVariations": [
+      "prótese peniana",
+      "IPP",
+      "implante peniano"
+    ],
+    "components": [
+      "implante",
+      "prótese",
+      "peniana"
+    ],
+    "typicalDurationMinutes": [
+      60,
+      120
+    ]
+  },
+  {
+    "canonical": "Postectomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "circuncisão",
+      "postectomia"
+    ],
+    "components": [
+      "postectomia"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      60
+    ]
+  },
+  {
+    "canonical": "Nesbit",
+    "abbreviations": [],
+    "spokenVariations": [
+      "corporoplastia",
+      "Nesbit"
+    ],
+    "components": [
+      "Nesbit"
+    ],
+    "typicalDurationMinutes": [
+      60,
+      120
+    ]
+  },
+  {
+    "canonical": "Cistoscopia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistoscopia diagnóstica",
+      "cistoscopia"
+    ],
+    "components": [
+      "cistoscopia"
+    ],
+    "typicalDurationMinutes": [
+      10,
+      30
+    ]
+  },
+  {
+    "canonical": "Cistectomia Radical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistectomia",
+      "cistectomia radical com derivação"
+    ],
+    "components": [
+      "cistectomia",
+      "radical"
+    ],
+    "typicalDurationMinutes": [
+      240,
+      420
+    ]
+  },
+  {
+    "canonical": "Cistectomia Parcial",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistectomia parcial",
+      "ressecção vesical"
+    ],
+    "components": [
+      "cistectomia",
+      "parcial"
+    ],
+    "typicalDurationMinutes": [
+      120,
+      180
+    ]
+  },
+  {
+    "canonical": "UTL Rígida",
+    "abbreviations": [
+      "Ureterolitotripsia Rígida"
+    ],
+    "spokenVariations": [
+      "UTL rígida",
+      "ureterolitotripsia rígida"
+    ],
+    "components": [
+      "UTL",
+      "rígida",
+      "ureterolitotripsia"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      90
+    ]
+  },
+  {
+    "canonical": "UTL Flexível",
+    "abbreviations": [
+      "Ureterolitotripsia Flexível"
+    ],
+    "spokenVariations": [
+      "UTL flexível",
+      "ureterolitotripsia flexível",
+      "ureteroscopia flexível"
+    ],
+    "components": [
+      "UTL",
+      "flexível",
+      "ureterolitotripsia"
+    ],
+    "typicalDurationMinutes": [
+      45,
+      120
+    ]
+  },
+  {
+    "canonical": "Nefrolitotripsia Percutânea",
+    "abbreviations": [
+      "NLP",
+      "PCNL"
+    ],
+    "spokenVariations": [
+      "nefrolitotripsia",
+      "NLP",
+      "percutânea"
+    ],
+    "components": [
+      "nefrolitotripsia",
+      "percutânea"
+    ],
+    "typicalDurationMinutes": [
+      90,
+      180
+    ]
+  },
+  {
+    "canonical": "Cistolitotripsia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "litotripsia vesical",
+      "cistolitotripsia"
+    ],
+    "components": [
+      "cistolitotripsia"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      90
+    ]
+  },
+  {
+    "canonical": "Cistolitotomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistolitotomia aberta",
+      "retirada de cálculo vesical"
+    ],
+    "components": [
+      "cistolitotomia"
+    ],
+    "typicalDurationMinutes": [
+      60,
+      120
+    ]
+  },
+  {
+    "canonical": "ECIRS",
+    "abbreviations": [
+      "Endoscopic Combined Intrarenal Surgery"
+    ],
+    "spokenVariations": [
+      "ECIRS",
+      "cirurgia renal combinada"
+    ],
+    "components": [
+      "ECIRS"
+    ],
+    "typicalDurationMinutes": [
+      120,
+      240
+    ]
+  },
+  {
+    "canonical": "Ureterostomia Cutanea Bilateral",
+    "abbreviations": [],
+    "spokenVariations": [
+      "ureterostomia",
+      "ureterostomia bilateral"
+    ],
+    "components": [
+      "ureterostomia",
+      "cutanea",
+      "bilateral"
+    ],
+    "typicalDurationMinutes": [
+      90,
+      180
+    ]
+  },
+  {
+    "canonical": "Herniorrafia Inguinal",
+    "abbreviations": [],
+    "spokenVariations": [
+      "hérnia inguinal",
+      "herniorrafia"
+    ],
+    "components": [
+      "herniorrafia",
+      "inguinal"
+    ],
+    "typicalDurationMinutes": [
+      45,
+      90
+    ]
+  },
+  {
+    "canonical": "Vasectomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "vasectomia bilateral",
+      "vasectomia"
+    ],
+    "components": [
+      "vasectomia"
+    ],
+    "typicalDurationMinutes": [
+      20,
+      40
+    ]
+  },
+  {
+    "canonical": "Varicocelectomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "varicocele",
+      "correção de varicocele"
+    ],
+    "components": [
+      "varicocelectomia"
+    ],
+    "typicalDurationMinutes": [
+      45,
+      90
+    ]
+  },
+  {
+    "canonical": "Meatoplastia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "meatoplastia uretral",
+      "meatoplastia"
+    ],
+    "components": [
+      "meatoplastia"
+    ],
+    "typicalDurationMinutes": [
+      15,
+      45
+    ]
+  },
+  {
+    "canonical": "Sling",
+    "abbreviations": [
+      "TVT",
+      "TOT"
+    ],
+    "spokenVariations": [
+      "sling suburetral",
+      "TVT",
+      "TOT"
+    ],
+    "components": [
+      "sling"
+    ],
+    "typicalDurationMinutes": [
+      30,
+      60
+    ]
+  }
+]

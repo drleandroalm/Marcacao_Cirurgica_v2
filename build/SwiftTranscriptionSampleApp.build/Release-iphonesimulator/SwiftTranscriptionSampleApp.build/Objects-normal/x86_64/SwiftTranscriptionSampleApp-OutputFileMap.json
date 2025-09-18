@@ -1,0 +1,151 @@
+{
+  "" : {
+    "const-values" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleApp-primary.swiftconstvalues",
+    "dependencies" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleApp-primary.d",
+    "diagnostics" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleApp-primary.dia",
+    "emit-module-dependencies" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleApp-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleApp-primary-emit-module.dia",
+    "pch" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleApp-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleApp-primary.swiftdeps"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/AppConfiguration.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/AppConfiguration.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/AppConfiguration.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/AppConfiguration.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/BufferConversion.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/BufferConversion.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/BufferConversion.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/BufferConversion.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/ComplianceValidator.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/ComplianceValidator.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/ComplianceValidator.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/ComplianceValidator.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/DurationFormatter.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/DurationFormatter.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/DurationFormatter.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/DurationFormatter.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/EntityExtractor.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/EntityExtractor.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/EntityExtractor.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/EntityExtractor.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/FormBuildCoordinator.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormBuildCoordinator.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormBuildCoordinator.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormBuildCoordinator.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/FormExporter.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormExporter.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormExporter.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormExporter.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/Helpers.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Helpers.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Helpers.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Helpers.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/IntelligentMatcher.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/IntelligentMatcher.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/IntelligentMatcher.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/IntelligentMatcher.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/MedicalKnowledgeBase.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/MedicalKnowledgeBase.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/MedicalKnowledgeBase.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/MedicalKnowledgeBase.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/MilitaryTimeFormatter.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/MilitaryTimeFormatter.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/MilitaryTimeFormatter.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/MilitaryTimeFormatter.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/OPMEConfiguration.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/OPMEConfiguration.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/OPMEConfiguration.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/OPMEConfiguration.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/SwiftTranscriptionSampleAppApp.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleAppApp.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleAppApp.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SwiftTranscriptionSampleAppApp.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/TranscriptionProcessor.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TranscriptionProcessor.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TranscriptionProcessor.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TranscriptionProcessor.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/TranscriptionSessionCache.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TranscriptionSessionCache.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TranscriptionSessionCache.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TranscriptionSessionCache.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/WhitelistEntityValidator.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/WhitelistEntityValidator.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/WhitelistEntityValidator.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/WhitelistEntityValidator.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Models/StoryModel.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/StoryModel.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/StoryModel.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/StoryModel.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Models/SurgicalRequestForm.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SurgicalRequestForm.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SurgicalRequestForm.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/SurgicalRequestForm.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Models/TemplateModel.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TemplateModel.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TemplateModel.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/TemplateModel.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Recording and Transcription/Recorder.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Recorder.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Recorder.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Recorder.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Recording and Transcription/Transcription.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Transcription.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Transcription.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/Transcription.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/ContentView.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/ContentView.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/DecisionPopups.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/DecisionPopups.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/DecisionPopups.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/DecisionPopups.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/FieldTranscriptionView.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FieldTranscriptionView.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FieldTranscriptionView.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FieldTranscriptionView.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/FormFillerView.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormFillerView.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormFillerView.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormFillerView.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/FormPreviewView.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormPreviewView.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormPreviewView.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/FormPreviewView.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/PostTranscriptionDecisionsView.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/PostTranscriptionDecisionsView.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/PostTranscriptionDecisionsView.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/PostTranscriptionDecisionsView.o"
+  },
+  "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/Objects-normal/x86_64/GeneratedAssetSymbols.o"
+  }
+}

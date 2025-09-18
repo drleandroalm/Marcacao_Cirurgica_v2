@@ -1,0 +1,322 @@
+{
+  "timestamp": "2025-09-07T06:15:11.457Z",
+  "duration": 36225,
+  "totalTests": 51,
+  "passed": 49,
+  "failed": 2,
+  "results": [
+    {
+      "toolName": "findUsages",
+      "testName": "Find class usages in TypeScript (table format) - Position-based",
+      "passed": true,
+      "duration": 1971
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find class usages in TypeScript (symbolName) - TestClass",
+      "passed": true,
+      "duration": 1450
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find variable usages in TypeScript (symbolName) - testVariable",
+      "passed": true,
+      "duration": 1377
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find method usages in TypeScript (symbolName) - getValue",
+      "passed": true,
+      "duration": 1435
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find interface usages in TypeScript (symbolName) - TestInterface",
+      "passed": true,
+      "duration": 1363
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Handle symbol not found (symbolName) - NonExistentSymbol",
+      "passed": true,
+      "duration": 1370
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find function usages in TypeScript (table format) - Position-based",
+      "passed": true,
+      "duration": 1393
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find variable usages (table format) - Position-based",
+      "passed": true,
+      "duration": 1373
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find usages in Python (table format) - Position-based",
+      "passed": true,
+      "duration": 1947
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find usages in Python (symbolName) - TestClass",
+      "passed": true,
+      "duration": 1914
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find usages in Python (symbolName) - test_function",
+      "passed": true,
+      "duration": 1910
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find usages in JavaScript (table format) - Position-based",
+      "passed": true,
+      "duration": 507
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find usages in JavaScript (symbolName) - TestClass",
+      "passed": true,
+      "duration": 1433
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Find usages in JavaScript (symbolName) - testFunction",
+      "passed": true,
+      "duration": 1413
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Handle invalid position (table format) - Position-based",
+      "passed": true,
+      "duration": 120
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Parameter validation - Missing required parameters",
+      "passed": true,
+      "duration": 111
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Test case sensitivity (symbolName) - testclass vs TestClass",
+      "passed": true,
+      "duration": 1378
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Verify table format structure",
+      "passed": true,
+      "duration": 1396
+    },
+    {
+      "toolName": "findUsages",
+      "testName": "Handle non-existent file (symbolName)",
+      "passed": true,
+      "duration": 8
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions using symbolName parameter",
+      "passed": true,
+      "duration": 418
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions using symbolName for nested access",
+      "passed": true,
+      "duration": 364
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Handle error cases with symbolName parameter",
+      "passed": true,
+      "duration": 347
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Test symbolName with trigger character",
+      "passed": true,
+      "duration": 379
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions after dot notation (object.method)",
+      "passed": false,
+      "error": "Assertion failed: Should include completion item with label \"getValue\"",
+      "duration": 539
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions for imports",
+      "passed": true,
+      "duration": 350
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions in empty line",
+      "passed": true,
+      "duration": 483
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions for function parameters",
+      "passed": false,
+      "error": "Assertion failed: Should include completion item with label \"timeout\"",
+      "duration": 402
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions in TypeScript file (legacy format)",
+      "passed": true,
+      "duration": 347
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions in TypeScript file using symbolName",
+      "passed": true,
+      "duration": 343
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions in JavaScript file (legacy format)",
+      "passed": true,
+      "duration": 367
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions in JavaScript file using symbolName",
+      "passed": true,
+      "duration": 356
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions in Python file (legacy format)",
+      "passed": true,
+      "duration": 590
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions in Python file using symbolName",
+      "passed": true,
+      "duration": 369
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Handle cases where no completions are available",
+      "passed": true,
+      "duration": 503
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Get completions with trigger character",
+      "passed": true,
+      "duration": 420
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Verify completion item kinds and details (legacy format)",
+      "passed": true,
+      "duration": 565
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Verify completion item kinds using symbolName",
+      "passed": true,
+      "duration": 388
+    },
+    {
+      "toolName": "getCompletions",
+      "testName": "Backward compatibility test",
+      "passed": true,
+      "duration": 355
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get children of TestClass",
+      "passed": true,
+      "duration": 387
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get children with depth=2",
+      "passed": true,
+      "duration": 378
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get children without hover info",
+      "passed": true,
+      "duration": 350
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get children of symbol with no children",
+      "passed": true,
+      "duration": 341
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Handle position with no symbol",
+      "passed": true,
+      "duration": 343
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get children with depth=all",
+      "passed": true,
+      "duration": 364
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get children of interface",
+      "passed": true,
+      "duration": 359
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get children of enum",
+      "passed": true,
+      "duration": 354
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Test position precision",
+      "passed": true,
+      "duration": 338
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Test with JavaScript file",
+      "passed": true,
+      "duration": 348
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Get symbol children using symbolName for TypeScript symbols",
+      "passed": true,
+      "duration": 358
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Error handling for symbolName parameter",
+      "passed": true,
+      "duration": 127
+    },
+    {
+      "toolName": "getSymbolChildren",
+      "testName": "Mixed parameter usage validation",
+      "passed": true,
+      "duration": 356
+    }
+  ],
+  "summary": {
+    "testSuites": 3,
+    "failedSuites": 0,
+    "successRate": "100.0%"
+  }
+}

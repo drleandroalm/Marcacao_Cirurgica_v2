@@ -6,45 +6,30 @@ The app's main view.
 */
 
 import SwiftUI
-import SwiftData
 import Speech
 
 struct ContentView: View {
-    @State var selection: Story?
-    @State var currentStory: Story = Story.blank()
-    
     var body: some View {
-        NavigationSplitView {
-            List(stories, selection: $selection) { story in
-                NavigationLink(value: story) {
-                    Text(story.title)
+        MainTabs()
+    }
+}
+
+struct MainTabs: View {
+    @StateObject private var sessionStore = SessionStore.shared
+
+    var body: some View {
+        TabView {
+            FormFillerView()
+                .tabItem {
+                    Label("Formulário", systemImage: "square.and.pencil")
                 }
-            }
-            
-            .navigationTitle("Stories")
-            
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        stories.append(Story.blank())
-                    } label: {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                .environmentObject(sessionStore)
+
+            HistoryView()
+                .tabItem {
+                    Label("Histórico", systemImage: "clock.fill")
                 }
-            }
-        } detail: {
-            if selection != nil {
-                TranscriptView(story: $currentStory)
-            } else {
-                Text("Select an item")
-            }
-        }
-        .onChange(of: selection) {
-            if let selection {
-                currentStory = selection
-            }
+                .environmentObject(sessionStore)
         }
     }
-    
-    @State var stories: [Story] = []
 }

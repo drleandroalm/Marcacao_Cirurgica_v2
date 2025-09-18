@@ -1,0 +1,338 @@
+✅ EntityExtractor session ready
+fopen failed for data file: errno = 2 (No such file or directory)
+Errors found! Invalidating cache...
+fopen failed for data file: errno = 2 (No such file or directory)
+Errors found! Invalidating cache...
+🎯 Analyzer preparation: 50%
+🚀 SpeechAnalyzer started successfully
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 98%
+🎤 Continuous Mode - New segment: 'Leandro'
+  - Confidence: 98%
+📦 Starting new transcript
+📊 Accumulated transcript stats:
+  - Total length: 7 characters
+  - Word count: 1 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 98%
+🎤 Continuous Mode - New segment: ' Almeida'
+  - Confidence: 98%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 16 characters
+  - Word count: 2 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 99%
+🎤 Continuous Mode - New segment: ' 72'
+  - Confidence: 99%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 20 characters
+  - Word count: 3 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 87%
+🎤 Continuous Mode - New segment: ' anos'
+  - Confidence: 87%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 26 characters
+  - Word count: 4 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 83%
+🎤 Continuous Mode - New segment: ' 31) 9947 5321'
+  - Confidence: 83%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 41 characters
+  - Word count: 7 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 99%
+🎤 Continuous Mode - New segment: ' Alexandre'
+  - Confidence: 99%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 52 characters
+  - Word count: 8 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 97%
+🎤 Continuous Mode - New segment: ' de Menezes'
+  - Confidence: 97%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 64 characters
+  - Word count: 10 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 98%
+🎤 Continuous Mode - New segment: ' 11 de'
+  - Confidence: 98%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 71 characters
+  - Word count: 12 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 93%
+🎤 Continuous Mode - New segment: ' março de 2026.'
+  - Confidence: 93%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 87 characters
+  - Word count: 15 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 95%
+🎤 Continuous Mode - New segment: ' 9h00 da manhã'
+  - Confidence: 95%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 102 characters
+  - Word count: 18 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+📊 Result confidence: 77%
+🎤 Continuous Mode - New segment: ' Cistolitotripsia percutânea'
+  - Confidence: 77%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 131 characters
+  - Word count: 20 words
+⏳ Accumulating transcript (will process after recording stops)
+📊 Result confidence: 100%
+📊 Result confidence: 100%
+🎬 Finishing transcription...
+  - Mode: Continuous
+  - Process after recording: true
+🔄 Finalizing analyzer (processing all pending audio)...
+📊 Result confidence: 99%
+🎤 Continuous Mode - New segment: ' 3h'
+  - Confidence: 99%
+🔗 Appending to existing transcript
+📊 Accumulated transcript stats:
+  - Total length: 135 characters
+  - Word count: 21 words
+⏳ Accumulating transcript (will process after recording stops)
+🚀 Auto-processing transcript at finishTranscribing()
+📤 Processing continuous transcription...
+📝 Full transcript to process: 'Leandro  Almeida  72  anos  31) 9947 5321  Alexandre  de Menezes  11 de  março de 2026.  9h00 da manhã  Cistolitotripsia percutânea  3h'
+📝 Transcript length: 135 characters
+🧹 Cleared continuous transcript after final processing
+🤖 Calling EntityExtractor with transcript of 135 chars
+🔍 EntityExtractor: Starting extraction
+📝 Input text length: 135 characters
+📝 Input preview: 'Leandro  Almeida  72  anos  31) 9947 5321  Alexandre  de Menezes  11 de  março de 2026.  9h00 da man...'
+🤖 EntityExtractor: Sending prompt to FoundationModels...
+📝 Prompt length: 2480 characters
+✅ EntityExtractor: Got response from model
+📋 Response content: '```json
+{
+  "entities": [
+    {
+      "fieldId": "patientName",
+      "value": "Leandro Almeida",
+      "confidence": 95,
+      "alternatives": []
+    },
+    {
+      "fieldId": "patientAge",
+      "value": "72",
+      "confidence": 95,
+      "alternatives": []
+    },
+    {
+      "fieldId": "patientPhone",
+      "value": "31) 9947 5321",
+      "confidence": 95,
+      "alternatives": []
+    },
+    {
+      "fieldId": "surgeonName",
+      "value": "Alexandre de Menezes",
+      "confidence": 95,
+      "alternatives": []
+    },
+    {
+      "fieldId": "surgeryDate",
+      "value": "11 de março de 2026",
+      "confidence": 95,
+      "alternatives": []
+    },
+    {
+      "fieldId": "surgeryTime",
+      "value": "9h00 da manhã",
+      "confidence": 95,
+      "alternatives": []
+    },
+    {
+      "fieldId": "procedureName",
+      "value": "Cistolitotripsia percutânea",
+      "confidence": 95,
+      "alternatives": []
+    },
+    {
+      "fieldId": "procedureDuration",
+      "value": "3h",
+      "confidence": 95,
+      "alternatives": []
+    }
+  ],
+  "unprocessed": "texto não processado",
+  "overallConfidence": 95
+}
+```'
+🔍 Parsing response of 1125 characters
+📦 Successfully parsed JSON
+📊 EntityExtractor: Parsed 8 entities
+🔧 EntityExtractor: Enhancing with knowledge base...
+🔍 EntityExtractor: Enhancing entities with knowledge base...
+🔍 IntelligentMatcher: Matching surgeon for: 'Alexandre de Menezes'
+🔍 IntelligentMatcher: Matching procedure for: 'Cistolitotripsia Percutânea'
+📝 Expanded input: 'Cistolitotripsia Percutânea'
+🏁 EntityExtractor: Final result - 8 entities, confidence: 0.9625
+  - Nome do Paciente: 'Leandro Almeida' (confidence: 0.95)
+  - Idade do Paciente: '72' (confidence: 0.95)
+  - Telefone do Paciente: '31) 9947 5321' (confidence: 0.95)
+  - Nome do Cirurgião: 'Alexandre de Menezes' (confidence: 1.0)
+  - Data da Cirurgia: '11 de março de 2026' (confidence: 0.95)
+  - Horário da Cirurgia: '9h00 da manhã' (confidence: 0.95)
+  - Nome do Procedimento: 'Cistolitotripsia' (confidence: 1.0)
+  - Duração Estimada: '3h' (confidence: 0.95)
+✅ Extraction complete: 8 entities found
+🎯 Extraction Results:
+  - Total entities extracted: 8
+  - Entity 1: patientName = 'Leandro Almeida' (confidence: 95%)
+  - Entity 2: patientAge = '72' (confidence: 95%)
+  - Entity 3: patientPhone = '31) 9947 5321' (confidence: 95%)
+  - Entity 4: surgeonName = 'Alexandre de Menezes' (confidence: 100%)
+  - Entity 5: surgeryDate = '11 de março de 2026' (confidence: 95%)
+  - Entity 6: surgeryTime = '9h00 da manhã' (confidence: 95%)
+  - Entity 7: procedureName = 'Cistolitotripsia' (confidence: 100%)
+  - Entity 8: procedureDuration = '3h' (confidence: 95%)
+✅ Updated: Nome do Paciente = 'Leandro Almeida'
+✅ Updated: Idade do Paciente = '72'
+✅ Updated: Telefone do Paciente = '31) 9947 5321'
+✅ Updated: Nome do Cirurgião = 'Alexandre de Menezes'
+✅ Updated: Data da Cirurgia = '11 de março de 2026'
+✅ Updated: Horário da Cirurgia = '9h00 da manhã'
+✅ Updated: Nome do Procedimento = 'Cistolitotripsia'
+✅ Updated: Duração Estimada = '3h'
+🎯 Calling onContinuousComplete with 8 entities
+✅ Transcription finished - all results finalized
+🏁 Finishing continuous transcription
+📊 Final transcript stats:
+  - Total: 0 chars
+  - Words: 0
+  - Process after recording mode: true
+🎯 FormPreviewView initialized with:
+  - Entities count: 8
+  - Entities received:
+    1. patientName: 'Leandro Almeida' (confidence: 95%)
+    2. patientAge: '72' (confidence: 95%)
+    3. patientPhone: '31) 9947 5321' (confidence: 95%)
+    4. surgeonName: 'Alexandre de Menezes' (confidence: 100%)
+    5. surgeryDate: '11 de março de 2026' (confidence: 95%)
+    6. surgeryTime: '9h00 da manhã' (confidence: 95%)
+    7. procedureName: 'Cistolitotripsia' (confidence: 100%)
+    8. procedureDuration: '3h' (confidence: 95%)
+  ✅ Updating field 'Nome do Paciente' with value: 'Leandro Almeida'
+  ✅ Updating field 'Idade do Paciente' with value: '72'
+  ✅ Updating field 'Telefone do Paciente' with value: '31) 9947 5321'
+  ✅ Updating field 'Nome do Cirurgião' with value: 'Alexandre de Menezes'
+  ✅ Updating field 'Data da Cirurgia' with value: '11 de março de 2026'
+  ✅ Updating field 'Horário da Cirurgia' with value: '9h00 da manhã'
+  ✅ Updating field 'Nome do Procedimento' with value: 'Cistolitotripsia'
+  ✅ Updating field 'Duração Estimada' with value: '3h'
+🔍 IntelligentMatcher: Matching surgeon for: 'Alexandre de Menezes'
+🔍 IntelligentMatcher: Matching procedure for: 'Cistolitotripsia'
+📝 Expanded input: 'Cistolitotripsia'
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+Reporter disconnected. { function=sendMessage, reporterID=12760347836419 }
+[C:4] Error received: Connection interrupted.
+[C:4-1] Error received: Connection interrupted.
+-[RTIInputSystemClient _configureConnection:withMachName:]_block_invoke  Client connection to service was interrupted: <NSXPCConnection: 0x113e6d5e0> connection to service with pid -1 named (null)
+Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x113ebdc20 V:|-(7)-[TUIKeyboardContentView:0x11517ce00]   (active, names: '|':TUIKeyplaneView:0x115190000 )>",
+    "<NSLayoutConstraint:0x113ebdc70 V:[TUIKeyboardContentView:0x11517ce00]-(12)-|   (active, names: '|':TUIKeyplaneView:0x115190000 )>",
+    "<NSLayoutConstraint:0x113ebd720 V:|-(0)-[TUIKeyplaneView:0x115190000]   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardLayoutStar Prev...:0x102bab000 )>",
+    "<NSLayoutConstraint:0x113ebd7c0 V:[TUIKeyplaneView:0x115190000]-(0)-|   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardLayoutStar Prev...:0x102bab000 )>",
+    "<NSLayoutConstraint:0x113ebd860 V:|-(0)-[UIKeyboardLayoutStar Prev...]   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardImpl:0x1058af400 )>",
+    "<NSLayoutConstraint:0x113ebd900 V:[UIKeyboardLayoutStar Prev...]-(0)-|   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardImpl:0x1058af400 )>",
+    "<NSLayoutConstraint:0x1151bd130 '_UITemporaryLayoutHeight' UIKeyboardImpl:0x1058af400.height == 258   (active)>",
+    "<NSLayoutConstraint:0x113ebc820 'TUIKeyplane.height' TUIKeyboardContentView:0x11517ce00.height == 224   (active)>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x113ebc820 'TUIKeyplane.height' TUIKeyboardContentView:0x11517ce00.height == 224   (active)>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful.
+Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x113ebdc20 V:|-(7)-[TUIKeyboardContentView:0x11517ce00]   (active, names: '|':TUIKeyplaneView:0x115190000 )>",
+    "<NSLayoutConstraint:0x113ebdc70 V:[TUIKeyboardContentView:0x11517ce00]-(12)-|   (active, names: '|':TUIKeyplaneView:0x115190000 )>",
+    "<NSLayoutConstraint:0x113ebd720 V:|-(0)-[TUIKeyplaneView:0x115190000]   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardLayoutStar Prev...:0x102bab000 )>",
+    "<NSLayoutConstraint:0x113ebd7c0 V:[TUIKeyplaneView:0x115190000]-(0)-|   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardLayoutStar Prev...:0x102bab000 )>",
+    "<NSLayoutConstraint:0x113ebd860 V:|-(0)-[UIKeyboardLayoutStar Prev...]   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardImpl:0x1058af400 )>",
+    "<NSLayoutConstraint:0x113ebd900 V:[UIKeyboardLayoutStar Prev...]-(0)-|   (active, names: UIKeyboardLayoutStar Prev...:0x102bab000, '|':UIKeyboardImpl:0x1058af400 )>",
+    "<NSLayoutConstraint:0x1152080a0 '_UITemporaryLayoutHeight' UIKeyboardImpl:0x1058af400.height == 258   (active)>",
+    "<NSLayoutConstraint:0x113ebc820 'TUIKeyplane.height' TUIKeyboardContentView:0x11517ce00.height == 224   (active)>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x113ebc820 'TUIKeyplane.height' TUIKeyboardContentView:0x11517ce00.height == 224   (active)>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful.

@@ -6,9 +6,11 @@ Conversion code for audio inputs.
 */
 
 import Foundation
-import AVFoundation
+@preconcurrency import AVFoundation
+import Speech
+import CoreMedia
 
-class BufferConverter {
+final class BufferConverter: @unchecked Sendable {
     enum Error: Swift.Error {
         case failedToCreateConverter
         case failedToCreateConversionBuffer
@@ -16,6 +18,8 @@ class BufferConverter {
     }
     
     private var converter: AVAudioConverter?
+    private var currentTime: TimeInterval = 0
+    private let startTime = Date()
     func convertBuffer(_ buffer: AVAudioPCMBuffer, to format: AVAudioFormat) throws -> AVAudioPCMBuffer {
         let inputFormat = buffer.format
         guard inputFormat != format else {
@@ -39,12 +43,26 @@ class BufferConverter {
         }
         
         var nsError: NSError?
-        var bufferProcessed = false
         
-        let status = converter.convert(to: conversionBuffer, error: &nsError) { packetCount, inputStatusPointer in
-            defer { bufferProcessed = true } // This closure can be called multiple times, but it only offers a single buffer.
-            inputStatusPointer.pointee = bufferProcessed ? .noDataNow : .haveData
-            return bufferProcessed ? nil : buffer
+        // Use a pointer-backed flag to avoid "Mutation of captured var in concurrently-executing code"
+        let processedPtr = UnsafeMutablePointer<Bool>.allocate(capacity: 1)
+        processedPtr.initialize(to: false)
+        defer {
+            processedPtr.deinitialize(count: 1)
+            processedPtr.deallocate()
+        }
+        
+        nonisolated(unsafe) let unsafeProcessedPtr = processedPtr
+        
+        let status = converter.convert(to: conversionBuffer, error: &nsError) { _, inputStatusPointer in
+            if unsafeProcessedPtr.pointee {
+                inputStatusPointer.pointee = .noDataNow
+                return nil
+            } else {
+                unsafeProcessedPtr.pointee = true
+                inputStatusPointer.pointee = .haveData
+                return buffer
+            }
         }
         
         guard status != .error else {
@@ -52,5 +70,19 @@ class BufferConverter {
         }
         
         return conversionBuffer
+    }
+    
+    func calculateTimeRange(for buffer: AVAudioPCMBuffer) -> CMTimeRange {
+        let duration = Double(buffer.frameLength) / buffer.format.sampleRate
+        let start = CMTime(seconds: currentTime, preferredTimescale: 1000000)
+        let durationTime = CMTime(seconds: duration, preferredTimescale: 1000000)
+        
+        currentTime += duration
+        
+        return CMTimeRange(start: start, duration: durationTime)
+    }
+    
+    func reset() {
+        currentTime = 0
     }
 }

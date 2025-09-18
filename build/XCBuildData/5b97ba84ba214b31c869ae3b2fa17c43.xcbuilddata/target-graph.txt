@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'SwiftTranscriptionSampleAppTests' in project 'SwiftTranscriptionSampleApp'
+➜ Explicit dependency on target 'SwiftTranscriptionSampleApp' in project 'SwiftTranscriptionSampleApp'
+Target 'SwiftTranscriptionSampleApp' in project 'SwiftTranscriptionSampleApp' (no dependencies)

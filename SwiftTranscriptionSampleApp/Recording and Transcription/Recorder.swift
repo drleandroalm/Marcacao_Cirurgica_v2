@@ -8,29 +8,56 @@ Audio input code
 import Foundation
 import AVFoundation
 import SwiftUI
+import os
 
-class Recorder {
-    private var outputContinuation: AsyncStream<AVAudioPCMBuffer>.Continuation? = nil
+/// Streams microphone audio into the speech pipeline while optionally persisting a waveform for playback or debugging.
+final class Recorder: @unchecked Sendable {
+    private var outputContinuation: AsyncStream<AudioData>.Continuation? = nil
     private let audioEngine: AVAudioEngine
     private let transcriber: SpokenWordTranscriber
-    var playerNode: AVAudioPlayerNode?
-    
-    var story: Binding<Story>
+    private let configuration: RecordingConfiguration
+    private var audioPlayer: AVAudioPlayer?
+    private static let metricsLog = OSLog(subsystem: "SwiftTranscriptionSampleApp", category: "Recorder")
     
     var file: AVAudioFile?
     private let url: URL
 
-    init(transcriber: SpokenWordTranscriber, story: Binding<Story>) {
+    init(transcriber: SpokenWordTranscriber, configuration: RecordingConfiguration = RecordingConfiguration()) {
         audioEngine = AVAudioEngine()
         self.transcriber = transcriber
-        self.story = story
+        self.configuration = configuration
         self.url = FileManager.default.temporaryDirectory
             .appending(component: UUID().uuidString)
             .appendingPathExtension(for: .wav)
     }
     
+    private func isAuthorized() async -> Bool {
+    #if os(iOS)
+        let session = AVAudioSession.sharedInstance()
+        switch session.recordPermission {
+        case .granted:
+            return true
+        case .denied:
+            return false
+        case .undetermined:
+            return await withCheckedContinuation { continuation in
+                session.requestRecordPermission { granted in
+                    continuation.resume(returning: granted)
+                }
+            }
+        @unknown default:
+            return false
+        }
+    #else
+        return true
+    #endif
+    }
+    
     func record() async throws {
-        self.story.url.wrappedValue = url
+        let signpostID = OSSignpostID(log: Self.metricsLog)
+        os_signpost(.begin, log: Self.metricsLog, name: "record()", signpostID: signpostID)
+        defer { os_signpost(.end, log: Self.metricsLog, name: "record()", signpostID: signpostID) }
+
         guard await isAuthorized() else {
             print("user denied mic permission")
             return
@@ -39,22 +66,34 @@ class Recorder {
         try setUpAudioSession()
 #endif
         try await transcriber.setUpTranscriber()
+        
+        // Capture a stable reference to avoid capturing task-isolated self later.
+        let transcriber = self.transcriber
                 
         for await input in try await audioStream() {
-            try await self.transcriber.streamAudioToTranscriber(input)
+            do {
+                // If the method is MainActor-isolated, the await will hop to the main actor automatically.
+                try await transcriber.streamAudioToTranscriber(input.buffer)
+            } catch {
+                print("streamAudioToTranscriber error: \(error)")
+            }
         }
     }
     
     func stopRecording() async throws {
+        audioEngine.inputNode.removeTap(onBus: 0)
         audioEngine.stop()
-        story.isDone.wrappedValue = true
-
+        outputContinuation?.finish()
+        outputContinuation = nil
         try await transcriber.finishTranscribing()
-
-        Task {
-            self.story.title.wrappedValue = try await story.wrappedValue.suggestedTitle() ?? story.title.wrappedValue
+        await transcriber.finishContinuousTranscription()
+    #if os(iOS)
+        do {
+            try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("Failed to deactivate audio session: \(error)")
         }
-
+    #endif
     }
     
     func pauseRecording() {
@@ -71,63 +110,61 @@ class Recorder {
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
     }
 #endif
+
+    private func writeBufferToDisk(buffer: AVAudioPCMBuffer) {
+        guard let file = self.file else { return }
+        do {
+            try file.write(from: buffer)
+        } catch {
+            print("Failed to write buffer to disk: \(error)")
+        }
+    }
     
-    private func audioStream() async throws -> AsyncStream<AVAudioPCMBuffer> {
+    private func audioStream() async throws -> AsyncStream<AudioData> {
         try setupAudioEngine()
         audioEngine.inputNode.installTap(onBus: 0,
-                                         bufferSize: 4096,
+                                         bufferSize: configuration.bufferSize,
                                          format: audioEngine.inputNode.outputFormat(forBus: 0)) { [weak self] (buffer, time) in
             guard let self else { return }
             writeBufferToDisk(buffer: buffer)
-            self.outputContinuation?.yield(buffer)
+            // Wrap in AudioData which is @unchecked Sendable.
+            let audioData = AudioData(buffer: buffer, time: time)
+            self.outputContinuation?.yield(audioData)
         }
         
         audioEngine.prepare()
-        try audioEngine.start()
+        if !audioEngine.isRunning {
+            try audioEngine.start()
+        }
         
-        return AsyncStream(AVAudioPCMBuffer.self, bufferingPolicy: .unbounded) {
-            continuation in
+        return AsyncStream(AudioData.self, bufferingPolicy: .bufferingNewest(configuration.streamBacklogDepth)) { continuation in
             outputContinuation = continuation
         }
     }
     
     private func setupAudioEngine() throws {
         let inputSettings = audioEngine.inputNode.inputFormat(forBus: 0).settings
-        self.file = try AVAudioFile(forWriting: url,
-                                    settings: inputSettings)
-        
+        if configuration.shouldWriteToDisk {
+            self.file = try AVAudioFile(forWriting: url, settings: inputSettings)
+        } else {
+            self.file = nil
+        }
         audioEngine.inputNode.removeTap(onBus: 0)
     }
         
     func playRecording() {
-        guard let file else {
-            return
-        }
-        
-        playerNode = AVAudioPlayerNode()
-        guard let playerNode else {
-            return
-        }
-        
-        audioEngine.attach(playerNode)
-        audioEngine.connect(playerNode,
-                            to: audioEngine.outputNode,
-                            format: file.processingFormat)
-        
-        playerNode.scheduleFile(file,
-                                at: nil,
-                                completionCallbackType: .dataPlayedBack) { _ in
-        }
-        
+        guard let url = file?.url else { return }
         do {
-            try audioEngine.start()
-            playerNode.play()
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
         } catch {
-            print("error")
+            print("AVAudioPlayer error: \(error)")
         }
     }
     
     func stopPlaying() {
-        audioEngine.stop()
+        audioPlayer?.stop()
+        audioPlayer = nil
     }
 }

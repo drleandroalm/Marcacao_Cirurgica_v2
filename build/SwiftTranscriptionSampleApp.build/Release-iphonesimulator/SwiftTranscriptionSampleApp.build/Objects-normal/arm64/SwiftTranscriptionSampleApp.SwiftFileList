@@ -1,0 +1,28 @@
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/AppConfiguration.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/BufferConversion.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/ComplianceValidator.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/DurationFormatter.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/EntityExtractor.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/FormBuildCoordinator.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/FormExporter.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/Helpers.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/IntelligentMatcher.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/MedicalKnowledgeBase.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/MilitaryTimeFormatter.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/OPMEConfiguration.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/SwiftTranscriptionSampleAppApp.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/TranscriptionProcessor.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/TranscriptionSessionCache.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Helpers/WhitelistEntityValidator.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Models/StoryModel.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Models/SurgicalRequestForm.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Models/TemplateModel.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Recording\ and\ Transcription/Recorder.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Recording\ and\ Transcription/Transcription.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/ContentView.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/DecisionPopups.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/FieldTranscriptionView.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/FormFillerView.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/FormPreviewView.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/SwiftTranscriptionSampleApp/Views/PostTranscriptionDecisionsView.swift
+/Users/leandroalmeida/Marcação_Cirúrgica/build/SwiftTranscriptionSampleApp.build/Release-iphonesimulator/SwiftTranscriptionSampleApp.build/DerivedSources/GeneratedAssetSymbols.swift

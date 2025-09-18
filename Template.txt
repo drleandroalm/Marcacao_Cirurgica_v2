@@ -1,0 +1,21 @@
+SOLICITAÇÃO DE AGENDAMENTO CIRÚRGICO
+
+DADOS DO PACIENTE:
+Nome: [Name of the paciente]
+Idade: [Age in years of the patient] anos
+Telefone: [Phone number of the patient]
+Preceptor:  [Name of Surgeon]
+Paciente em precaução: ( ) Não ( )sim
+Paciente com doença infecto contagiosa: ( X ) Não (  )sim
+DADOS DA CIRURGIA:
+Data: [Date of the surgery in the format of day/month/year]
+Preferência de horário: [Time of the Surgery]
+Procedimento:   [Name of the procedure]
+Convênio: SUS
+Necessidade de CTI: () Não ()sim 
+Reserva de hemocomponentes: () Não   () Sim:    Especificar: 
+Necessidade de OPME:  (X) Não   () Sim  Especificar: 
+Fornecedor:
+Necessidade de equipamentos específicos:  (X) Não   ()Sim
+Especificar:
+Tempo do procedimento: [estimated time of the procedure]
