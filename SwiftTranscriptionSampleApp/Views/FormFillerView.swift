@@ -10,7 +10,7 @@ struct FormFillerView: View {
     @State private var showCopiedAlert = false
     @State private var recorder: Recorder?
     @State private var speechTranscriber: SpokenWordTranscriber?
-    @State private var isContinuousMode = false
+    @State private var isContinuousMode = true
     @State private var processAfterRecording = true  // New toggle for processing mode
     @State private var persistRecording = false  // Save audio (WAV) to disk
     @State private var extractionResult: ExtractionResult?
@@ -32,31 +32,37 @@ struct FormFillerView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                modeToggle
-                hemPopupToggle
-                progressBar
-                
-                ScrollView {
-                    VStack(spacing: 20) {
-                        if isContinuousMode {
+            ZStack {
+                // Dark background
+                DarkTheme.background
+                    .ignoresSafeArea()
+
+                VStack(spacing: 0) {
+                    // Custom navigation header
+                    navigationHeader
+
+                    // Single mode (Contínuo) — segmented control removed
+                    hemPopupToggle
+
+                    progressIndicator
+
+                    ScrollView {
+                        VStack(spacing: 20) {
+                            // Continuous one‑take only
                             continuousRecordingCard
-                        } else {
-                            currentFieldCard
+                            fieldsOverview
                         }
-                        fieldsOverview
+                        .padding()
                     }
-                    .padding()
+
+                    if form.isComplete {
+                        completionToolbar
+                    }
+
+                    controlToolbar
                 }
-                
-                if form.isComplete {
-                    completionToolbar
-                }
-                
-                controlToolbar
             }
-            .navigationTitle("Formulário Cirúrgico")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
             .alert("Copiado!", isPresented: $showCopiedAlert) {
                 Button("OK", role: .cancel) { }
             } message: {
@@ -175,43 +181,36 @@ struct FormFillerView: View {
         }
     }
     
-    private var modeToggle: some View {
+    private var navigationHeader: some View {
         HStack {
-            Text("Modo:")
-                .font(.caption)
-                .foregroundColor(.secondary)
-            
-            Picker("Modo de Gravação", selection: $isContinuousMode) {
-                Text("Campo por Campo").tag(false)
-                Text("Contínuo").tag(true)
-            }
-            .pickerStyle(.segmented)
-            .disabled(isRecording)
-            
+            Text("Formulário Cirúrgico")
+                .font(.system(size: 24, weight: .bold))
+                .foregroundColor(DarkTheme.textPrimary)
+
             Spacer()
+
+            if form.isComplete {
+                Image(systemName: "checkmark.seal.fill")
+                    .font(.system(size: 20))
+                    .foregroundColor(DarkTheme.success)
+                    .glow(color: DarkTheme.success, radius: 6)
+            }
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-        .background(Color(.systemGray6))
-        .onChange(of: isContinuousMode) { _, _ in
-            // Safely stop, reconfigure, and auto-resume when switching modes
-            reconfigureRecorder(autoResume: true)
-        }
-        .onChange(of: persistRecording) { _, _ in
-            // Safely stop, reconfigure, and auto-resume if we were recording
-            reconfigureRecorder(autoResume: true)
-        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .background(DarkTheme.secondaryBackground)
     }
 
+    // Segmented control removed; app runs in continuous mode only.
+
     private var hemPopupToggle: some View {
-        HStack(spacing: 12) {
-            Image(systemName: "drop.fill").foregroundColor(.red)
-            Toggle("Perguntar reserva de hemocomponentes", isOn: $hemPopupEnabled)
-                .toggleStyle(SwitchToggleStyle(tint: .red))
-        }
-        .padding(.horizontal)
+        CyanToggle(
+            isOn: $hemPopupEnabled,
+            label: "Perguntar reserva de hemocomponentes",
+            icon: "drop.fill"
+        )
+        .padding(.horizontal, 20)
         .padding(.vertical, 8)
-        .background(Color(.systemGray6))
     }
     
     private var continuousRecordingCard: some View {
@@ -297,7 +296,7 @@ struct FormFillerView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     
-                    Text("Exemplo: 'Paciente João Silva, 45 anos, telefone 11987654321, cirurgia amanhã às 14 horas, procedimento apendicectomia, doutor Pedro Santos.'")
+                    ExampleCard(text: "Exemplo: 'Paciente João Silva, 45 anos, telefone 11987654321, cirurgia amanhã às 14 horas, procedimento apendicectomia, doutor Pedro Santos.'")
                         .font(.footnote)
                         .foregroundColor(.secondary)
                         .italic()
@@ -313,25 +312,17 @@ struct FormFillerView: View {
         .shadow(radius: 2)
     }
     
-    private var progressBar: some View {
-        VStack(spacing: 8) {
-            HStack {
-                Text("Campo \(form.currentFieldIndex + 1) de \(form.fields.count)")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-                
-                Text("\(Int(form.progressPercentage * 100))% Completo")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-            
-            ProgressView(value: form.progressPercentage)
-                .tint(.blue)
+    private var progressIndicator: some View {
+        HStack {
+            Spacer()
+            CircularProgressIndicator(
+                current: form.currentFieldIndex + 1,
+                total: form.fields.count,
+                progress: form.progressPercentage
+            )
+            Spacer()
         }
-        .padding()
-        .background(Color(.systemGray6))
+        .padding(.vertical, 20)
     }
     
     private var currentFieldCard: some View {
@@ -455,35 +446,13 @@ struct FormFillerView: View {
     
     private var controlToolbar: some View {
         HStack {
-            Button(action: moveToPreviousField) {
-                Image(systemName: "chevron.left")
-                    .frame(width: 44, height: 44)
-            }
-            .disabled(form.currentFieldIndex == 0 || isRecording || isContinuousMode)
-            
             Spacer()
             
-            Button(action: toggleRecording) {
-                VStack(spacing: 4) {
-                    Image(systemName: isRecording ? "stop.fill" : "mic.fill")
-                        .font(.title2)
-                        .foregroundColor(isRecording ? .red : .white)
-                    Text(isRecording ? "Parar" : "Gravar")
-                        .font(.caption)
-                        .foregroundColor(isRecording ? .red : .white)
-                }
-                .frame(width: 80, height: 80)
-                .background(isRecording ? Color.red.opacity(0.2) : Color.red)
-                .clipShape(Circle())
-            }
+            GradientMicrophoneButton(isRecording: isRecording, action: toggleRecording)
             
             Spacer()
-            
-            Button(action: moveToNextField) {
-                Image(systemName: "chevron.right")
-                    .frame(width: 44, height: 44)
-            }
-            .disabled(form.currentFieldIndex == form.fields.count - 1 || isRecording || isContinuousMode)
+
+            // Removed step navigation in continuous mode
             
             // Play button (when audio was persisted)
             if !isRecording && persistRecording {
@@ -515,23 +484,16 @@ struct FormFillerView: View {
             speechTranscriber = nil
             
             // Setup new recorder with appropriate mode
-            let onFieldComplete: ((String) -> Void)? = isContinuousMode ? nil : { transcribedText in
-                DispatchQueue.main.async {
-                    if !transcribedText.isEmpty {
-                        form.updateCurrentFieldValue(transcribedText)
-                    }
-                }
-            }
-            
-            let onContinuousComplete: ((ExtractionResult) -> Void)? = isContinuousMode ? { result in
+            let onFieldComplete: ((String) -> Void)? = nil
+            let onContinuousComplete: ((ExtractionResult) -> Void)? = { result in
                 DispatchQueue.main.async {
                     extractionResult = result
                     showingPreview = true
                 }
-            } : nil
+            }
             
             let transcriptionConfig = TranscriptionConfiguration(
-                isContinuousMode: isContinuousMode,
+                isContinuousMode: true,
                 processAfterRecording: processAfterRecording
             )
             speechTranscriber = SpokenWordTranscriber(
@@ -579,11 +541,7 @@ struct FormFillerView: View {
                 
                 isRecording = false
                 
-                if !isContinuousMode && form.currentField?.isComplete == true && form.currentFieldIndex < form.fields.count - 1 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        _ = form.moveToNextField()
-                    }
-                }
+                // No step advancement in continuous mode
             } catch {
                 print("Stop recording error: \(error)")
                 isRecording = false

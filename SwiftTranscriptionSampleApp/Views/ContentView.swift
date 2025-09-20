@@ -11,25 +11,48 @@ import Speech
 struct ContentView: View {
     var body: some View {
         MainTabs()
+            .preferredColorScheme(.dark)
     }
 }
 
 struct MainTabs: View {
     @StateObject private var sessionStore = SessionStore.shared
+    @State private var selectedTab = 0
 
     var body: some View {
-        TabView {
-            FormFillerView()
-                .tabItem {
-                    Label("Formulário", systemImage: "square.and.pencil")
-                }
-                .environmentObject(sessionStore)
+        ZStack {
+            // Dark background
+            DarkTheme.background
+                .ignoresSafeArea()
 
-            HistoryView()
-                .tabItem {
-                    Label("Histórico", systemImage: "clock.fill")
+            VStack(spacing: 0) {
+                // Content
+                Group {
+                    if selectedTab == 0 {
+                        FormFillerView()
+                            .environmentObject(sessionStore)
+                    } else {
+                        HistoryView()
+                            .environmentObject(sessionStore)
+                    }
                 }
-                .environmentObject(sessionStore)
+
+                // Custom Tab Bar
+                DarkTabBar(
+                    selectedTab: $selectedTab,
+                    tabs: [
+                        ("Formulário", "square.and.pencil"),
+                        ("Histórico", "clock.fill")
+                    ]
+                )
+            }
+        }
+        .onAppear {
+            // Customize appearance
+            UITabBar.appearance().backgroundColor = UIColor.black
+            UITabBar.appearance().tintColor = UIColor.cyan
+            UINavigationBar.appearance().backgroundColor = UIColor.black
+            UINavigationBar.appearance().tintColor = UIColor.cyan
         }
     }
 }

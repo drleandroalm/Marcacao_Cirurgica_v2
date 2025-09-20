@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.1.1 — Extraction Robustness & Disambiguation
+
+- Fallback extraction now expands medical abbreviations (RTU/RTUP/UTL/etc.) before matching.
+- Added knowledge‑base assisted extraction that scans transcript n‑grams to resolve surgeons and procedures without requiring prefixes like “Dr.” or generic keywords.
+- Hardened phone parsing to accept non‑digit separators and pre‑fill 8–9 digit numbers (UI guides to add DDD; validator flags until complete).
+- Disambiguated duration vs. time phrases: when a clock time is already present, hours‑only matches like “uma hora da tarde” are ignored unless accompanied by duration keywords.
+- All unit tests continue to pass.
+
+### UI
+- Dark theme adoption across main flow, glass‑morphism cards, and cyan glow accents
+- Gradient microphone button with pulsing animation while recording
+- Removed “Passo a Passo” (field‑by‑field) mode; app now operates exclusively in “Contínuo” mode
+
 ## v1.1.0 — History, Export, and Parser Fixes
 
 - Added a new “Histórico” tab with persistent sessions and browsing features:
@@ -15,4 +28,3 @@
   - Duration phrases (e.g., “uma hora e meia”).
 - New unit tests for time/duration edge cases.
 - Build/test configuration updated for command‑line runs.
-

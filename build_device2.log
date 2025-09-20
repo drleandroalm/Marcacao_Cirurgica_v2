@@ -1,0 +1,9 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SwiftTranscriptionSampleApp.xcodeproj -scheme SwiftTranscriptionSampleApp -sdk iphoneos -configuration Debug -destination id=00008140-001664420413C01C -allowProvisioningUpdates -allowProvisioningDeviceRegistration "CODE_SIGN_IDENTITY=Apple Development" PROVISIONING_PROFILE_SPECIFIER= DEVELOPMENT_TEAM=C3Y254HR6B build
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = Apple Development
+    DEVELOPMENT_TEAM = C3Y254HR6B
+    PROVISIONING_PROFILE_SPECIFIER = 
+    SDKROOT = iphoneos26.0
+

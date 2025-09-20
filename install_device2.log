@@ -1,0 +1,10 @@
+22:30:54  Acquired tunnel connection to device.
+22:30:54  Enabling developer disk image services.
+22:30:55  Acquired usage assertion.
+App installed:
+• bundleID: com.example.apple-samplecode.SwiftTranscriptionSampleApp
+• installationURL: file:///private/var/containers/Bundle/Application/C09EC75C-7E7C-4FBE-A71F-134E2B6E1466/SwiftTranscriptionSampleApp.app/
+• launchServicesIdentifier: unknown
+• databaseUUID: 501CE6E7-DE34-4361-BC3C-C9205BD2A59C
+• databaseSequenceNumber: 4500
+• options: 

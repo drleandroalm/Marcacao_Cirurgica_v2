@@ -56,7 +56,14 @@ This project began as Apple's WWDC25 Session 277 sample app demonstrating the ne
 - **Export Options**: Copy to clipboard, share, save as JSON/Text
 - **Visual Confidence Indicators**: Green/Orange/Red indicators for extraction quality
 - **Inline Editing**: Modify any incorrectly extracted values
- - **History Tab**: Browse accepted sessions chronologically with search, filters, and deletion
+- **History Tab**: Browse accepted sessions chronologically with search, filters, and deletion
+
+### 🎨 Revamped Dark UI (v1.1.1)
+- Full dark theme with glass‑morphism cards and cyan glow accents
+- Gradient microphone button with pulsing animation while recording
+- Custom segmented controls and toggles restyled to match medical UI motif
+- Compact circular progress indicator for overall completion
+- Single‑mode workflow: Continuous one‑take only (Campo por Campo removed)
 
 ## 🏗️ Architecture
 
@@ -200,10 +207,7 @@ doutor Pedro Santos, duração estimada duas horas"
 
 ### Field-by-Field Mode
 
-The app guides you through each field sequentially:
-1. 🗣️ "João Silva" → ✅ Nome do Paciente
-2. 🗣️ "quarenta e cinco" → ✅ Idade: 45
-3. 🗣️ "onze nove oito..." → ✅ Telefone: (11) 98765-4321
+Removed. The app now focuses on a single, streamlined “Contínuo” capture experience for higher throughput and better AI extraction.
 
 ## 📚 API Reference
 
@@ -296,6 +300,13 @@ struct ExtractedEntity {
 - New tests: Added edge-case unit tests for time and duration normalization.
   - `SwiftTranscriptionSampleAppTests/MilitaryTimeFormatterTests.swift`
   - `SwiftTranscriptionSampleAppTests/DurationFormatterTests.swift`
+
+### What’s New (v1.1.1) — Extraction Robustness
+
+- Knowledge‑base assisted fallback: even without prefixes like “Dr.” or generic procedure keywords, the fallback scans n‑grams of the transcript and uses IntelligentMatcher to resolve known surgeons and procedures with high confidence.
+- Abbreviation expansion in fallback: medical short forms (RTU/RTUP/UTL/…) are expanded before matching so phrases like “RTU de próstata” consistently map to canonical procedures.
+- Phone parsing hardened: accepts separators like “)” or mixed spaces/dashes; also captures 8–9 digit numbers without DDD to pre‑fill the field (UI warns to add DDD).
+- Duration disambiguation: prevents “uma hora da tarde” from being misread as duration when a clock time was already found, unless the user says keywords like “duração/tempo/estimada”.
 
 ### History Tab
 
@@ -452,17 +463,25 @@ let response = try await session.respond(to: prompt)
 
 ## 🗺️ Roadmap
 
-### Version 2.0 (Q2 2025)
-- [ ] Multi-template support (different medical forms)
-- [ ] Cloud sync with iCloud
-- [ ] PDF export functionality
-- [ ] Voice commands for navigation
+See ROADMAP.md for the full plan. Highlights:
 
-### Version 3.0 (Q4 2025)
-- [ ] Integration with hospital systems (HL7/FHIR)
-- [ ] Multi-user support
-- [ ] Advanced analytics dashboard
-- [ ] Offline model improvements
+### Recently shipped (v1.1.0)
+- History tab with search/filters/delete and compact CTI/OPME/Hem flags
+- Bulk export (CSV/JSON) with anonymization toggle
+- pt‑BR parsing improvements for dates/durations/weekday phrases
+- PHI‑safe logs and unified export pipeline
+
+### Next (v1.2.x)
+- PDF export (templated)
+- Enhanced weekday/relative-date phrases
+- Session tagging/notes and export presets
+- Optional CSV/JSON encryption
+
+### Later (v2.0+)
+- Multi‑template support
+- iCloud sync (opt‑in)
+- Voice commands for navigation
+- HL7/FHIR, multi‑user, analytics, offline model improvements
 
 ## 🤝 Contributing
 

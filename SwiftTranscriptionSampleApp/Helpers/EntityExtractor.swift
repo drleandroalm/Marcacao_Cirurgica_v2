@@ -94,6 +94,24 @@ class EntityExtractor {
         self.configuration = configuration
     }
 
+    // MARK: - Abbreviation expansion utility (shared with fallback)
+    nonisolated private static func expandAbbreviations(in text: String) -> String {
+        var processed = text
+        for (abbr, expansion) in MedicalKnowledgeBase.abbreviationExpansions {
+            let pattern = "\\b\(abbr)\\b"
+            if let regex = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) {
+                let range = NSRange(location: 0, length: processed.utf16.count)
+                processed = regex.stringByReplacingMatches(
+                    in: processed,
+                    options: [],
+                    range: range,
+                    withTemplate: expansion
+                )
+            }
+        }
+        return processed
+    }
+
     func extractEntities(from transcription: String, for form: SurgicalRequestForm) async throws -> ExtractionResult {
         let signpostID = OSSignpostID(log: Self.metricsLog)
         os_signpost(.begin, log: Self.metricsLog, name: "extractEntities()", signpostID: signpostID)
@@ -490,8 +508,10 @@ class EntityExtractor {
         print("🔍 Fallback extraction: Processing \(Self.redactedSummary(for: text))")
         
         var entities: [ExtractedEntity] = []
-        let lowercased = text.lowercased()
-        let words = text.split(separator: " ").map(String.init)
+        // Expand known abbreviations first (e.g., RTU, RTUP, UTL, etc.)
+        let expanded = expandAbbreviations(in: text)
+        let lowercased = expanded.lowercased()
+        let words = lowercased.split(separator: " ").map(String.init)
         print("📊 Starting pattern matching for all 8 fields...")
         
         // 1. Extract patient name - enhanced patterns
@@ -551,22 +571,23 @@ class EntityExtractor {
             }
         }
         
-        // 3. Extract phone - enhanced patterns
+        // 3. Extract phone - enhanced patterns (allow any non-digit separators like ')' or '.')
         let phonePatterns = [
-            #"(?:telefone|celular|contato)\s*(?:é\s*)?(?:o\s*)?(\d{2}\s?\d{4,5}[\s-]?\d{4})"#,
-            #"(\d{2}\s?\d{4,5}[\s-]?\d{4})"#,
+            #"(?:telefone|celular|contato)\s*(?:é\s*)?(?:o\s*)?(\d{2}\D*\d{4,5}\D*\d{4})"#,
+            #"(\d{2}\D*\d{4,5}\D*\d{4})"#,
             #"(\d{10,11})"#
         ]
         
         for pattern in phonePatterns {
-            if let phoneMatch = text.range(of: pattern, options: [.regularExpression, .caseInsensitive]) {
-                let phoneStr = String(text[phoneMatch])
+            if let phoneMatch = expanded.range(of: pattern, options: [.regularExpression, .caseInsensitive]) {
+                let phoneStr = String(expanded[phoneMatch])
                 let phone = phoneStr.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-                if phone.count == 10 || phone.count == 11 {
+                if (8...11).contains(phone.count) {
+                    let conf: Double = (phone.count >= 10) ? 0.8 : 0.65
                     entities.append(ExtractedEntity(
                         fieldId: "patientPhone",
                         value: phone,
-                        confidence: 0.8,
+                        confidence: conf,
                         alternatives: [],
                         originalText: text
                     ))
@@ -649,6 +670,7 @@ class EntityExtractor {
             #"(?:horário|hora)\s*(?:é\s*)?(?:às\s*)?(\d{1,2})[:hH]?(\d{2})?"#
         ]
         
+        var foundTime = false
         for pattern in timePatterns {
             if let timeMatch = text.range(of: pattern, options: [.regularExpression, .caseInsensitive]) {
                 let timeStr = String(text[timeMatch])
@@ -662,6 +684,7 @@ class EntityExtractor {
                         originalText: text
                     ))
                     print("🕰 Found time \(Self.redactedValue(time))")
+                    foundTime = true
                     break
                 }
             }
@@ -677,17 +700,17 @@ class EntityExtractor {
             ("cirurgião", 1, 3),
             ("preceptor", 1, 3)
         ]
-        
+
         for (keyword, startOffset, endOffset) in surgeonPatterns {
             if let keyIndex = words.firstIndex(where: { 
-                $0.lowercased() == keyword || $0.lowercased() == "\(keyword)."
+                $0 == keyword || $0 == "\(keyword)."
             }),
                keyIndex + startOffset < words.count {
                 let endIndex = min(keyIndex + endOffset, words.count - 1)
                 let surgeonName = words[keyIndex + startOffset...endIndex]
-                    .filter { !["de", "da", "do", "dos", "das"].contains($0.lowercased()) || $0.count > 2 }
+                    .filter { !["de", "da", "do", "dos", "das"].contains($0) || $0.count > 2 }
                     .joined(separator: " ")
-                
+
                 if !surgeonName.isEmpty && surgeonName.count > 2 {
                     entities.append(ExtractedEntity(
                         fieldId: "surgeonName",
@@ -709,15 +732,15 @@ class EntityExtractor {
             "implante", "prótese", "cirurgia", "operação", "procedimento",
             "intervenção", "tratamento"
         ]
-        
+
         for keyword in procedureKeywords {
             if lowercased.contains(keyword) {
-                if let procIndex = words.firstIndex(where: { $0.lowercased().contains(keyword) }) {
+                if let procIndex = words.firstIndex(where: { $0.contains(keyword) }) {
                     // Get more context around the procedure
                     let startIdx = max(0, procIndex - 2)
                     let endIdx = min(procIndex + 2, words.count - 1)
                     let procName = words[startIdx...endIdx]
-                        .filter { !["de", "da", "do", "a", "o", "para"].contains($0.lowercased()) || $0.lowercased().contains(keyword) }
+                        .filter { !["de", "da", "do", "a", "o", "para"].contains($0) || $0.contains(keyword) }
                         .joined(separator: " ")
                     
                     entities.append(ExtractedEntity(
@@ -732,6 +755,35 @@ class EntityExtractor {
                 }
             }
         }
+
+        // KB-assisted detection when prefixes/keywords are not present
+        func hasEntity(_ id: String) -> Bool { entities.contains { $0.fieldId == id } }
+
+        if !hasEntity("surgeonName") {
+            if let kbSurgeon = detectSurgeonViaKnowledgeBase(in: lowercased) {
+                entities.append(ExtractedEntity(
+                    fieldId: "surgeonName",
+                    value: kbSurgeon.value,
+                    confidence: kbSurgeon.confidence,
+                    alternatives: kbSurgeon.alternatives,
+                    originalText: text
+                ))
+                print("👨‍⚕️ KB matched surgeon \(Self.redactedValue(kbSurgeon.value))")
+            }
+        }
+
+        if !hasEntity("procedureName") {
+            if let kbProcedure = detectProcedureViaKnowledgeBase(in: lowercased) {
+                entities.append(ExtractedEntity(
+                    fieldId: "procedureName",
+                    value: kbProcedure.value,
+                    confidence: kbProcedure.confidence,
+                    alternatives: kbProcedure.alternatives,
+                    originalText: text
+                ))
+                print("🔧 KB matched procedure \(Self.redactedValue(kbProcedure.value))")
+            }
+        }
         
         // 8. Extract duration - new field handling
         let durationPatterns = [
@@ -741,9 +793,20 @@ class EntityExtractor {
             #"tempo\s*(?:estimado\s*)?(?:de\s*)?(\d+)\s*horas?"#
         ]
         
+        let hasDurationKeyword = lowercased.contains("duração") || lowercased.contains("duracao") || lowercased.contains("tempo") || lowercased.contains("estimad")
         for pattern in durationPatterns {
             if let durationMatch = text.range(of: pattern, options: [.regularExpression, .caseInsensitive]) {
                 let durationStr = String(text[durationMatch])
+                // Disambiguate phrases like "uma hora da tarde" when time already detected
+                let segmentLower = durationStr.lowercased()
+                let looksLikeClockPhrase = segmentLower.contains("hora") && (lowercased.contains("da tarde") || lowercased.contains("da noite") || lowercased.contains("da manhã") || lowercased.contains("de manhã"))
+                if foundTime && !hasDurationKeyword && looksLikeClockPhrase {
+                    continue
+                }
+                // If time was found and there is no duration keyword, be conservative for hours-only matches
+                if foundTime && !hasDurationKeyword && (segmentLower.contains("hora") && !segmentLower.contains("minuto")) {
+                    continue
+                }
                 let duration = formatDuration(durationStr)
                 if !duration.isEmpty {
                     entities.append(ExtractedEntity(
@@ -769,6 +832,51 @@ class EntityExtractor {
             unprocessedText: "",
             confidence: entities.isEmpty ? 0.3 : Double(entities.count) / 8.0
         )
+    }
+
+    // MARK: - KB-assisted recognition helpers
+    private static func detectSurgeonViaKnowledgeBase(in lowercasedText: String) -> (value: String, confidence: Double, alternatives: [String])? {
+        let tokens = lowercasedText.split(whereSeparator: { $0.isWhitespace || $0.isNewline }).map(String.init)
+        let windows = ngrams(tokens: tokens, minLen: 1, maxLen: 4)
+        var best: (value: String, confidence: Double, alternatives: [String])?
+        for w in windows {
+            let res = IntelligentMatcher.matchSurgeon(w)
+            if res.isKnownEntity && res.confidence >= 0.85 {
+                if best == nil || res.confidence > best!.confidence {
+                    best = (res.value, res.confidence, res.alternatives)
+                }
+            }
+        }
+        return best
+    }
+
+    private static func detectProcedureViaKnowledgeBase(in lowercasedText: String) -> (value: String, confidence: Double, alternatives: [String])? {
+        let tokens = lowercasedText.split(whereSeparator: { $0.isWhitespace || $0.isNewline }).map(String.init)
+        let windows = ngrams(tokens: tokens, minLen: 1, maxLen: 6)
+        var best: (value: String, confidence: Double, alternatives: [String])?
+        for w in windows {
+            let res = IntelligentMatcher.matchProcedure(w)
+            if res.isKnownEntity && res.confidence >= 0.80 {
+                if best == nil || res.confidence > best!.confidence {
+                    best = (res.value, res.confidence, res.alternatives)
+                }
+            }
+        }
+        return best
+    }
+
+    private static func ngrams(tokens: [String], minLen: Int, maxLen: Int) -> [String] {
+        var result: [String] = []
+        let n = tokens.count
+        let maxL = min(maxLen, n)
+        for l in minLen...maxL {
+            if l <= 0 { continue }
+            for i in 0..<(n - l + 1) {
+                let slice = tokens[i..<(i + l)]
+                result.append(slice.joined(separator: " "))
+            }
+        }
+        return result
     }
     
     private static func formatTime(_ timeStr: String) -> String {

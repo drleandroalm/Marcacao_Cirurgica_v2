@@ -1,0 +1,3 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SwiftTranscriptionSampleApp.xcodeproj -scheme SwiftTranscriptionSampleApp -configuration Debug -destination id=00008140-001664420413C01C -allowProvisioningUpdates -allowProvisioningDeviceRegistration build
+
