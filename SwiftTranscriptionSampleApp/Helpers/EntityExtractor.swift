@@ -133,7 +133,10 @@ class EntityExtractor {
         }
         
         // Preprocess transcription to expand abbreviations
+        let preprocessID = OSSignpostID(log: Self.metricsLog)
+        os_signpost(.begin, log: Self.metricsLog, name: "preprocessTranscription", signpostID: preprocessID)
         let preprocessed = preprocessTranscription(transcription)
+        os_signpost(.end, log: Self.metricsLog, name: "preprocessTranscription", signpostID: preprocessID)
         
         // Ensure session is ready
         if !isSessionReady || session == nil {
@@ -145,33 +148,47 @@ class EntityExtractor {
             throw EntityExtractionError.sessionUnavailable
         }
         
+        let promptBuildID = OSSignpostID(log: Self.metricsLog)
+        os_signpost(.begin, log: Self.metricsLog, name: "buildExtractionPrompt", signpostID: promptBuildID)
         let prompt = buildExtractionPrompt(for: preprocessed, fields: form.fields)
+        os_signpost(.end, log: Self.metricsLog, name: "buildExtractionPrompt", signpostID: promptBuildID)
 
         do {
             print("🤖 EntityExtractor: Sending prompt to FoundationModels...")
             print("📝 Prompt length: \(prompt.count) characters")
             
             // Add timeout for the model response
+            let llmID = OSSignpostID(log: Self.metricsLog)
+            os_signpost(.begin, log: Self.metricsLog, name: "LLMRespond", signpostID: llmID)
             let response = try await withTimeout(seconds: configuration.responseTimeout) {
                 try await session.respond(to: prompt)
             }
+            os_signpost(.end, log: Self.metricsLog, name: "LLMRespond", signpostID: llmID)
             
             print("✅ EntityExtractor: Got response from model (len=\(response.content.count) chars)")
             
+            let parseID = OSSignpostID(log: Self.metricsLog)
+            os_signpost(.begin, log: Self.metricsLog, name: "parseExtractionResponse", signpostID: parseID)
             let parsedResult = try parseExtractionResponse(response.content, originalText: transcription)
+            os_signpost(.end, log: Self.metricsLog, name: "parseExtractionResponse", signpostID: parseID)
             print("📊 EntityExtractor: Parsed \(parsedResult.entities.count) entities")
             
             // Enhance with knowledge base validation off the main actor
             print("🔧 EntityExtractor: Enhancing with knowledge base...")
+            let kbID = OSSignpostID(log: Self.metricsLog)
+            os_signpost(.begin, log: Self.metricsLog, name: "enhanceWithKnowledgeBase", signpostID: kbID)
             let enhancedResult = await Task.detached(priority: .userInitiated) {
                 Self.enhanceWithKnowledgeBase(parsedResult)
             }.value
+            os_signpost(.end, log: Self.metricsLog, name: "enhanceWithKnowledgeBase", signpostID: kbID)
             var result = enhancedResult
 
             // If coverage is low, supplement with deterministic fallback
             let requiredIds = configuration.requiredFieldIds
             let presentIds = Set(result.entities.map { $0.fieldId })
             if !requiredIds.isSubset(of: presentIds) {
+                let supplementID = OSSignpostID(log: Self.metricsLog)
+                os_signpost(.begin, log: Self.metricsLog, name: "supplementWithFallback", signpostID: supplementID)
                 print("🧩 Supplementing entities with fallback extraction for missing fields…")
                 let fallback = try await performFallbackExtraction(for: transcription)
                 var merged: [String: ExtractedEntity] = [:]
@@ -190,6 +207,7 @@ class EntityExtractor {
                 // Re-run KB enhancement for any added items
                 supplemented = Self.enhanceWithKnowledgeBase(supplemented)
                 result = supplemented
+                os_signpost(.end, log: Self.metricsLog, name: "supplementWithFallback", signpostID: supplementID)
             }
             
             print("🏁 EntityExtractor: Final result - \(result.entities.count) entities, confidence: \(result.confidence)")
@@ -232,7 +250,11 @@ class EntityExtractor {
     
     private func performFallbackExtraction(for text: String) async throws -> ExtractionResult {
         // Run on the main actor to respect actor isolation for helper methods
-        return try Self.fallbackExtraction(from: text)
+        let id = OSSignpostID(log: Self.metricsLog)
+        os_signpost(.begin, log: Self.metricsLog, name: "performFallbackExtraction", signpostID: id)
+        let r = try Self.fallbackExtraction(from: text)
+        os_signpost(.end, log: Self.metricsLog, name: "performFallbackExtraction", signpostID: id)
+        return r
     }
     
     nonisolated private static func enhanceWithKnowledgeBase(_ result: ExtractionResult) -> ExtractionResult {
@@ -506,6 +528,8 @@ class EntityExtractor {
     
     static func fallbackExtraction(from text: String) throws -> ExtractionResult {
         print("🔍 Fallback extraction: Processing \(Self.redactedSummary(for: text))")
+        let id = OSSignpostID(log: metricsLog)
+        os_signpost(.begin, log: metricsLog, name: "fallbackExtraction", signpostID: id)
         
         var entities: [ExtractedEntity] = []
         // Expand known abbreviations first (e.g., RTU, RTUP, UTL, etc.)
@@ -827,11 +851,13 @@ class EntityExtractor {
             print("  - \(entity.fieldId): \(Self.redactedValue(entity.value)) (confidence: \(Int(entity.confidence * 100))%)")
         }
         
-        return ExtractionResult(
+        let result = ExtractionResult(
             entities: entities,
             unprocessedText: "",
             confidence: entities.isEmpty ? 0.3 : Double(entities.count) / 8.0
         )
+        os_signpost(.end, log: metricsLog, name: "fallbackExtraction", signpostID: id)
+        return result
     }
 
     // MARK: - KB-assisted recognition helpers

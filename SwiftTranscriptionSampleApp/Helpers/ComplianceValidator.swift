@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import os
 
 enum ComplianceStatus {
     case verified(confidence: Double)
@@ -91,34 +92,45 @@ struct ValidationResult {
 }
 
 class ComplianceValidator {
+    private static let metricsLog = OSLog(subsystem: "SwiftTranscriptionSampleApp", category: "ComplianceValidator")
     
     // MARK: - Main Validation Method
     @MainActor
     static func validate(form: SurgicalRequestForm) -> ValidationResult {
+        let id = OSSignpostID(log: metricsLog)
+        os_signpost(.begin, log: metricsLog, name: "validate(form:)", signpostID: id)
         var issues: [ComplianceIssue] = []
         var fieldStatuses: [String: ComplianceStatus] = [:]
         var confidenceScores: [Double] = []
         
         // Validate each field
         for field in form.fields {
+            let fieldID = OSSignpostID(log: metricsLog)
+            os_signpost(.begin, log: metricsLog, name: "validateField", signpostID: fieldID, "id=%{public}s", field.id)
             let (status, fieldIssues, confidence) = validateField(field)
+            os_signpost(.end, log: metricsLog, name: "validateField", signpostID: fieldID, "id=%{public}s", field.id)
             fieldStatuses[field.id] = status
             issues.append(contentsOf: fieldIssues)
             confidenceScores.append(confidence)
         }
         
         // Cross-field validation
+        let xID = OSSignpostID(log: metricsLog)
+        os_signpost(.begin, log: metricsLog, name: "validateCrossFields", signpostID: xID)
         let crossFieldIssues = validateCrossFields(form: form)
+        os_signpost(.end, log: metricsLog, name: "validateCrossFields", signpostID: xID)
         issues.append(contentsOf: crossFieldIssues)
         
         // Calculate overall confidence
         let overallConfidence = confidenceScores.isEmpty ? 0 : confidenceScores.reduce(0, +) / Double(confidenceScores.count)
         
-        return ValidationResult(
+        let result = ValidationResult(
             issues: issues,
             overallConfidence: overallConfidence,
             fieldStatuses: fieldStatuses
         )
+        os_signpost(.end, log: metricsLog, name: "validate(form:)", signpostID: id)
+        return result
     }
     
     // MARK: - Field Validation
