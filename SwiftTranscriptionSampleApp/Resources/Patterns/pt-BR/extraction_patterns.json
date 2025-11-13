@@ -1,0 +1,114 @@
+{
+  "version": "1.0.0",
+  "locale": "pt-BR",
+  "description": "Pattern configuration for Brazilian Portuguese medical entity extraction",
+  "patterns": {
+    "patientName": {
+      "contextKeywords": [
+        {"keyword": "paciente", "wordOffset": [1, 3], "confidence": 0.75},
+        {"keyword": "nome", "wordOffset": [1, 3], "confidence": 0.70},
+        {"keyword": "senhor", "wordOffset": [1, 3], "confidence": 0.65},
+        {"keyword": "senhora", "wordOffset": [1, 3], "confidence": 0.65}
+      ],
+      "validation": {
+        "minLength": 3,
+        "maxLength": 100,
+        "capitalizedRequired": true
+      }
+    },
+    "patientAge": {
+      "regexPatterns": [
+        {"pattern": "(\\d{1,3})\\s*anos?", "confidence": 0.85},
+        {"pattern": "idade\\s+(?:de\\s+)?(\\d{1,3})", "confidence": 0.90},
+        {"pattern": "(\\d{1,3})\\s*(?:anos?\\s+)?(?:de\\s+)?idade", "confidence": 0.88}
+      ],
+      "validation": {
+        "minValue": 0,
+        "maxValue": 150
+      }
+    },
+    "patientPhone": {
+      "regexPatterns": [
+        {"pattern": "(?:telefone|celular|contato)\\s*(?:é\\s*)?(?:o\\s*)?(\\d{2}\\D*\\d{4,5}\\D*\\d{4})", "confidence": 0.80},
+        {"pattern": "(\\d{2}\\D*\\d{4,5}\\D*\\d{4})", "confidence": 0.70},
+        {"pattern": "(\\d{10,11})", "confidence": 0.65}
+      ],
+      "validation": {
+        "minDigits": 8,
+        "maxDigits": 11,
+        "format": "digits_only"
+      }
+    },
+    "surgeryDate": {
+      "relativeKeywords": [
+        {"keyword": "hoje", "daysOffset": 0, "confidence": 0.95},
+        {"keyword": "amanhã", "daysOffset": 1, "confidence": 0.95},
+        {"keyword": "depois de amanhã", "daysOffset": 2, "confidence": 0.95}
+      ],
+      "regexPatterns": [
+        {"pattern": "(\\d{1,2}[/\\-]\\d{1,2}[/\\-]\\d{2,4})", "confidence": 0.85},
+        {"pattern": "dia\\s+(\\d{1,2})\\s+de\\s+(\\w+)", "confidence": 0.82},
+        {"pattern": "(\\d{1,2})\\s+de\\s+(\\w+)", "confidence": 0.80}
+      ],
+      "advancedPatterns": [
+        {"pattern": "daqui\\s+a\\s+(\\d+)\\s+dias?", "type": "relative_days", "confidence": 0.88},
+        {"pattern": "daqui\\s+a\\s+(\\d+)\\s+semanas?", "type": "relative_weeks", "confidence": 0.88},
+        {"pattern": "em\\s+(\\d+)\\s+dias?", "type": "relative_days", "confidence": 0.85},
+        {"pattern": "próxim[ao]\\s+dia\\s+(\\d+)", "type": "next_day_of_month", "confidence": 0.83}
+      ],
+      "weekdaySupport": true
+    },
+    "surgeryTime": {
+      "regexPatterns": [
+        {"pattern": "(?:às\\s*)?(\\d{1,2}):(\\d{2})", "confidence": 0.90},
+        {"pattern": "(?:às\\s*)?(\\d{1,2})[hH](\\d{2})", "confidence": 0.88},
+        {"pattern": "(\\d{1,2})\\s*(?:e\\s*)?(\\d{2})?\\s*horas?", "confidence": 0.82},
+        {"pattern": "(?:horário|hora)\\s*(?:é\\s*)?(?:às\\s*)?(\\d{1,2})[:hH]?(\\d{2})?", "confidence": 0.85}
+      ],
+      "validation": {
+        "hourMin": 0,
+        "hourMax": 23,
+        "minuteMin": 0,
+        "minuteMax": 59
+      }
+    },
+    "surgeonName": {
+      "contextKeywords": [
+        {"keyword": "doutor", "wordOffset": [1, 3], "confidence": 0.80},
+        {"keyword": "doutora", "wordOffset": [1, 3], "confidence": 0.80},
+        {"keyword": "dr", "wordOffset": [1, 3], "confidence": 0.75},
+        {"keyword": "dra", "wordOffset": [1, 3], "confidence": 0.75},
+        {"keyword": "médico", "wordOffset": [1, 3], "confidence": 0.70},
+        {"keyword": "cirurgião", "wordOffset": [1, 3], "confidence": 0.78},
+        {"keyword": "cirurgiã", "wordOffset": [1, 3], "confidence": 0.78},
+        {"keyword": "preceptor", "wordOffset": [1, 3], "confidence": 0.72},
+        {"keyword": "professor", "wordOffset": [1, 3], "confidence": 0.68}
+      ],
+      "validation": {
+        "minLength": 3,
+        "maxLength": 100,
+        "capitalizedRequired": true
+      }
+    },
+    "procedureName": {
+      "useKnowledgeBase": true,
+      "minimumMatchScore": 0.60,
+      "regexPatterns": [
+        {"pattern": "cirurgia\\s+de\\s+([\\w\\s]+)", "confidence": 0.65},
+        {"pattern": "procedimento\\s+(?:de\\s+)?([\\w\\s]+)", "confidence": 0.65}
+      ]
+    },
+    "procedureDuration": {
+      "regexPatterns": [
+        {"pattern": "(\\d{1,2})\\s*(?:horas?|hrs?)", "confidence": 0.85},
+        {"pattern": "(\\d{1,2})\\s*h\\s*(\\d{1,2})?", "confidence": 0.88},
+        {"pattern": "duração\\s*(?:de\\s*)?(\\d{1,2})\\s*(?:horas?|hrs?)", "confidence": 0.90},
+        {"pattern": "tempo\\s*(?:de\\s*)?(\\d{1,2})\\s*(?:horas?|hrs?)", "confidence": 0.88}
+      ],
+      "validation": {
+        "minMinutes": 5,
+        "maxMinutes": 720
+      }
+    }
+  }
+}

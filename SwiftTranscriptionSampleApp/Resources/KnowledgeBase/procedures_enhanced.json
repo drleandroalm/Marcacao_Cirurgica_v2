@@ -1,0 +1,554 @@
+[
+  {
+    "canonical": "RTU de Bexiga",
+    "abbreviations": ["RTU vesical", "RTU", "R T U", "RD", "TURBT"],
+    "spokenVariations": [
+      "RTU bexiga",
+      "ressecção transuretral de bexiga",
+      "RTU da bexiga",
+      "rd de bexiga",
+      "r d de bexiga"
+    ],
+    "components": ["RTU", "bexiga"],
+    "typicalDurationMinutes": [30, 90],
+    "snomedCT": "112883006",
+    "icd10pcs": ["0TBB8ZX", "0TBB8ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Ressectoscópio", "Alça de ressecção"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "RTU de Próstata",
+    "abbreviations": ["RTUP", "TURP"],
+    "spokenVariations": [
+      "RTU próstata",
+      "ressecção transuretral de próstata",
+      "RTU da próstata"
+    ],
+    "components": ["RTU", "próstata"],
+    "typicalDurationMinutes": [60, 120],
+    "snomedCT": "176258007",
+    "icd10pcs": ["0VB08ZX", "0VB08ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Ressectoscópio", "Alça de ressecção"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "RTU de Colo Vesical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "RTU colo",
+      "ressecção transuretral de colo vesical"
+    ],
+    "components": ["RTU", "colo", "vesical"],
+    "typicalDurationMinutes": [30, 60],
+    "snomedCT": "88036003",
+    "icd10pcs": ["0TBB8ZX"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Ressectoscópio"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Orquiectomia Subcapsular Bilateral",
+    "abbreviations": ["OSC", "OSC bilateral"],
+    "spokenVariations": [
+      "orquiectomia bilateral",
+      "OSC",
+      "orquiectomia subcapsular"
+    ],
+    "components": ["orquiectomia", "subcapsular", "bilateral"],
+    "typicalDurationMinutes": [30, 60],
+    "snomedCT": "236334001",
+    "icd10pcs": ["0VTB0ZZ", "0VTC0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Orquiectomia Radical Unilateral",
+    "abbreviations": [],
+    "spokenVariations": [
+      "orquiectomia radical",
+      "orquiectomia unilateral"
+    ],
+    "components": ["orquiectomia", "radical", "unilateral"],
+    "typicalDurationMinutes": [45, 90],
+    "snomedCT": "236333007",
+    "icd10pcs": ["0VTB0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "RTU de Próstata + Orquiectomia Subcapsular Bilateral",
+    "abbreviations": ["RTUP + OSC"],
+    "spokenVariations": [
+      "RTU próstata mais OSC",
+      "RTU de próstata com orquiectomia bilateral"
+    ],
+    "components": ["RTU", "próstata", "orquiectomia", "subcapsular", "bilateral"],
+    "typicalDurationMinutes": [90, 150],
+    "snomedCT": null,
+    "icd10pcs": ["0VB08ZZ", "0VTB0ZZ", "0VTC0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Ressectoscópio"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Prostatectomia Radical",
+    "abbreviations": ["PR"],
+    "spokenVariations": [
+      "prostatectomia",
+      "prostatectomia radical aberta"
+    ],
+    "components": ["prostatectomia", "radical"],
+    "typicalDurationMinutes": [120, 240],
+    "snomedCT": "176261008",
+    "icd10pcs": ["0VT00ZZ", "0VT04ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Prostatectomia Aberta Millin",
+    "abbreviations": [],
+    "spokenVariations": [
+      "Millin",
+      "prostatectomia Millin",
+      "prostatectomia aberta"
+    ],
+    "components": ["prostatectomia", "aberta", "Millin"],
+    "typicalDurationMinutes": [90, 180],
+    "snomedCT": "176265004",
+    "icd10pcs": ["0VB00ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Nefrectomia Radical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefrectomia",
+      "nefrectomia radical aberta"
+    ],
+    "components": ["nefrectomia", "radical"],
+    "typicalDurationMinutes": [120, 240],
+    "snomedCT": "175898006",
+    "icd10pcs": ["0TT00ZZ", "0TT10ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Nefrectomia Parcial",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefrectomia parcial aberta",
+      "ressecção renal"
+    ],
+    "components": ["nefrectomia", "parcial"],
+    "typicalDurationMinutes": [120, 240],
+    "snomedCT": "64368001",
+    "icd10pcs": ["0TB00ZZ", "0TB10ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Nefroureterectomia Radical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefroureterectomia",
+      "nefrectomia com ureterectomia"
+    ],
+    "components": ["nefroureterectomia", "radical"],
+    "typicalDurationMinutes": [180, 300],
+    "snomedCT": "60827001",
+    "icd10pcs": ["0TT00ZZ", "0TT70ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Nefrectomia Parcial VLP",
+    "abbreviations": ["Nefrectomia Parcial Videolaparoscópica"],
+    "spokenVariations": [
+      "nefrectomia parcial laparoscópica",
+      "nefrectomia parcial VLP"
+    ],
+    "components": ["nefrectomia", "parcial", "VLP", "videolaparoscópica"],
+    "typicalDurationMinutes": [150, 300],
+    "snomedCT": "287663008",
+    "icd10pcs": ["0TB04ZZ", "0TB14ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Material de videolaparoscopia"],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Nefrectomia Radical VLP",
+    "abbreviations": ["Nefrectomia Radical Videolaparoscópica"],
+    "spokenVariations": [
+      "nefrectomia radical laparoscópica",
+      "nefrectomia radical VLP"
+    ],
+    "components": ["nefrectomia", "radical", "VLP", "videolaparoscópica"],
+    "typicalDurationMinutes": [120, 240],
+    "snomedCT": "287664002",
+    "icd10pcs": ["0TT04ZZ", "0TT14ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Material de videolaparoscopia"],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Nefroureterectomia Radical VLP",
+    "abbreviations": ["Nefroureterectomia Radical Videolaparoscópica"],
+    "spokenVariations": [
+      "nefroureterectomia laparoscópica",
+      "nefroureterectomia VLP"
+    ],
+    "components": ["nefroureterectomia", "radical", "VLP", "videolaparoscópica"],
+    "typicalDurationMinutes": [180, 360],
+    "snomedCT": "287665001",
+    "icd10pcs": ["0TT04ZZ", "0TT74ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Material de videolaparoscopia"],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Implante de Cateter Duplo J",
+    "abbreviations": ["Duplo J", "DJ"],
+    "spokenVariations": [
+      "passagem de duplo J",
+      "cateter duplo J",
+      "implante duplo J"
+    ],
+    "components": ["implante", "cateter", "duplo", "J"],
+    "typicalDurationMinutes": [15, 45],
+    "snomedCT": "236974004",
+    "icd10pcs": ["0TH73DZ", "0TH83DZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Cateter Duplo J"],
+    "typicalAnesthesia": "Sedação"
+  },
+  {
+    "canonical": "Retirada de Cateter Duplo J",
+    "abbreviations": ["Retirada DJ"],
+    "spokenVariations": [
+      "retirada duplo J",
+      "remoção de duplo J"
+    ],
+    "components": ["retirada", "cateter", "duplo", "J"],
+    "typicalDurationMinutes": [10, 30],
+    "snomedCT": "71861002",
+    "icd10pcs": ["0TP73DZ", "0TP83DZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Local"
+  },
+  {
+    "canonical": "Nefrostomia Percutânea Unilateral",
+    "abbreviations": [],
+    "spokenVariations": [
+      "nefrostomia",
+      "nefrostomia percutânea"
+    ],
+    "components": ["nefrostomia", "percutânea", "unilateral"],
+    "typicalDurationMinutes": [30, 60],
+    "snomedCT": "175899003",
+    "icd10pcs": ["0T903ZZ", "0T913ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Cateter de nefrostomia"],
+    "typicalAnesthesia": "Local com sedação"
+  },
+  {
+    "canonical": "Uretrotomia Interna",
+    "abbreviations": ["UI"],
+    "spokenVariations": [
+      "uretrotomia",
+      "UI",
+      "uretrotomia interna óptica"
+    ],
+    "components": ["uretrotomia", "interna"],
+    "typicalDurationMinutes": [15, 45],
+    "snomedCT": "26803006",
+    "icd10pcs": ["0T8D8ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Uretrotomo"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Implante de Prótese Peniana",
+    "abbreviations": ["IPP"],
+    "spokenVariations": [
+      "prótese peniana",
+      "IPP",
+      "implante peniano"
+    ],
+    "components": ["implante", "prótese", "peniana"],
+    "typicalDurationMinutes": [60, 120],
+    "snomedCT": "236331009",
+    "icd10pcs": ["0VHS0JZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Prótese peniana"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Postectomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "circuncisão",
+      "postectomia"
+    ],
+    "components": ["postectomia"],
+    "typicalDurationMinutes": [30, 60],
+    "snomedCT": "72310004",
+    "icd10pcs": ["0VBSXZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Raquianestesia ou Local"
+  },
+  {
+    "canonical": "Nesbit",
+    "abbreviations": [],
+    "spokenVariations": [
+      "corporoplastia",
+      "Nesbit"
+    ],
+    "components": ["Nesbit"],
+    "typicalDurationMinutes": [60, 120],
+    "snomedCT": "43028005",
+    "icd10pcs": ["0VQS0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Cistoscopia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistoscopia diagnóstica",
+      "cistoscopia"
+    ],
+    "components": ["cistoscopia"],
+    "typicalDurationMinutes": [10, 30],
+    "snomedCT": "80008005",
+    "icd10pcs": ["0TJB8ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Sedação ou Local"
+  },
+  {
+    "canonical": "Cistectomia Radical",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistectomia",
+      "cistectomia radical com derivação"
+    ],
+    "components": ["cistectomia", "radical"],
+    "typicalDurationMinutes": [240, 420],
+    "snomedCT": "79883001",
+    "icd10pcs": ["0TTB0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Cistectomia Parcial",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistectomia parcial",
+      "ressecção vesical"
+    ],
+    "components": ["cistectomia", "parcial"],
+    "typicalDurationMinutes": [120, 180],
+    "snomedCT": "85520001",
+    "icd10pcs": ["0TBB0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "UTL Rígida",
+    "abbreviations": ["Ureterolitotripsia Rígida", "URS"],
+    "spokenVariations": [
+      "UTL rígida",
+      "ureterolitotripsia rígida"
+    ],
+    "components": ["UTL", "rígida", "ureterolitotripsia"],
+    "typicalDurationMinutes": [30, 90],
+    "snomedCT": "397856004",
+    "icd10pcs": ["0TF78ZZ", "0TF68ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Ureteroscópio rígido", "Fibra de Laser"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "UTL Flexível",
+    "abbreviations": ["Ureterolitotripsia Flexível", "URS Flexível"],
+    "spokenVariations": [
+      "UTL flexível",
+      "ureterolitotripsia flexível",
+      "ureteroscopia flexível"
+    ],
+    "components": ["UTL", "flexível", "ureterolitotripsia"],
+    "typicalDurationMinutes": [45, 120],
+    "snomedCT": "397856004",
+    "icd10pcs": ["0TF78ZZ", "0TF68ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Ureteroscópio flexível", "Fibra de Laser"],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Nefrolitotripsia Percutânea",
+    "abbreviations": ["NLP", "PCNL", "NPF"],
+    "spokenVariations": [
+      "nefrolitotripsia",
+      "NLP",
+      "percutânea"
+    ],
+    "components": ["nefrolitotripsia", "percutânea"],
+    "typicalDurationMinutes": [90, 180],
+    "snomedCT": "11466000",
+    "icd10pcs": ["0TF03ZZ", "0TF13ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Nefroscópio", "Dilatadores de Amplatz", "Fibra de Laser"],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Cistolitotripsia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "litotripsia vesical",
+      "cistolitotripsia"
+    ],
+    "components": ["cistolitotripsia"],
+    "typicalDurationMinutes": [30, 90],
+    "snomedCT": "61869002",
+    "icd10pcs": ["0TFB8ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Fibra de Laser ou Litotritor"],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "Cistolitotomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "cistolitotomia aberta",
+      "retirada de cálculo vesical"
+    ],
+    "components": ["cistolitotomia"],
+    "typicalDurationMinutes": [60, 120],
+    "snomedCT": "77041001",
+    "icd10pcs": ["0TCB0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Raquianestesia"
+  },
+  {
+    "canonical": "ECIRS",
+    "abbreviations": ["Endoscopic Combined Intrarenal Surgery"],
+    "spokenVariations": [
+      "ECIRS",
+      "cirurgia renal combinada"
+    ],
+    "components": ["ECIRS"],
+    "typicalDurationMinutes": [120, 240],
+    "snomedCT": null,
+    "icd10pcs": ["0TF03ZZ", "0TF08ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": ["Nefroscópio", "Ureteroscópio flexível", "Fibra de Laser"],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Ureterostomia Cutanea Bilateral",
+    "abbreviations": [],
+    "spokenVariations": [
+      "ureterostomia",
+      "ureterostomia bilateral"
+    ],
+    "components": ["ureterostomia", "cutanea", "bilateral"],
+    "typicalDurationMinutes": [90, 180],
+    "snomedCT": "56975006",
+    "icd10pcs": ["0T170Z4", "0T180Z4"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral"
+  },
+  {
+    "canonical": "Herniorrafia Inguinal",
+    "abbreviations": [],
+    "spokenVariations": [
+      "hérnia inguinal",
+      "herniorrafia"
+    ],
+    "components": ["herniorrafia", "inguinal"],
+    "typicalDurationMinutes": [45, 90],
+    "snomedCT": "48387007",
+    "icd10pcs": ["0YQ60ZZ", "0YQ50ZZ"],
+    "specialty": "Cirurgia Geral",
+    "requiredOPME": ["Tela protética (opcional)"],
+    "typicalAnesthesia": "Raquianestesia ou Local"
+  },
+  {
+    "canonical": "Vasectomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "vasectomia bilateral",
+      "vasectomia"
+    ],
+    "components": ["vasectomia"],
+    "typicalDurationMinutes": [20, 40],
+    "snomedCT": "22523008",
+    "icd10pcs": ["0VBQ0ZZ", "0VBP0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Local"
+  },
+  {
+    "canonical": "Varicocelectomia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "varicocele",
+      "correção de varicocele"
+    ],
+    "components": ["varicocelectomia"],
+    "typicalDurationMinutes": [45, 90],
+    "snomedCT": "29213003",
+    "icd10pcs": ["0VBC0ZZ", "0VBB0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Anestesia Geral ou Raquianestesia"
+  },
+  {
+    "canonical": "Meatoplastia",
+    "abbreviations": [],
+    "spokenVariations": [
+      "meatoplastia uretral",
+      "meatoplastia"
+    ],
+    "components": ["meatoplastia"],
+    "typicalDurationMinutes": [15, 45],
+    "snomedCT": "22703006",
+    "icd10pcs": ["0TQD0ZZ"],
+    "specialty": "Urologia",
+    "requiredOPME": [],
+    "typicalAnesthesia": "Local ou Sedação"
+  },
+  {
+    "canonical": "Sling",
+    "abbreviations": ["TVT", "TOT"],
+    "spokenVariations": [
+      "sling suburetral",
+      "TVT",
+      "TOT"
+    ],
+    "components": ["sling"],
+    "typicalDurationMinutes": [30, 60],
+    "snomedCT": "447995008",
+    "icd10pcs": ["0UHC7KZ"],
+    "specialty": "Urologia/Uroginecologia",
+    "requiredOPME": ["Faixa de sling"],
+    "typicalAnesthesia": "Raquianestesia"
+  }
+]

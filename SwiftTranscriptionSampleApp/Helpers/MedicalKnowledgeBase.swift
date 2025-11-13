@@ -38,13 +38,36 @@ struct ProcedureEntity: Sendable {
     let spokenVariations: [String]
     let components: [String]
     let typicalDuration: ClosedRange<Int> // in minutes
-    
-    init(canonical: String, abbreviations: [String] = [], spokenVariations: [String] = [], components: [String] = [], typicalDuration: ClosedRange<Int> = 30...240) {
+
+    // Phase 1 enhancements
+    let snomedCT: String?              // SNOMED-CT code
+    let icd10pcs: [String]?            // ICD-10-PCS codes
+    let specialty: String?              // "Urologia", "Cirurgia Geral", etc.
+    let requiredOPME: [String]?        // Required special equipment
+    let typicalAnesthesia: String?      // "Raquianestesia", "Anestesia Geral", etc.
+
+    init(
+        canonical: String,
+        abbreviations: [String] = [],
+        spokenVariations: [String] = [],
+        components: [String] = [],
+        typicalDuration: ClosedRange<Int> = 30...240,
+        snomedCT: String? = nil,
+        icd10pcs: [String]? = nil,
+        specialty: String? = nil,
+        requiredOPME: [String]? = nil,
+        typicalAnesthesia: String? = nil
+    ) {
         self.canonical = canonical
         self.abbreviations = abbreviations
         self.spokenVariations = spokenVariations
         self.components = components
         self.typicalDuration = typicalDuration
+        self.snomedCT = snomedCT
+        self.icd10pcs = icd10pcs
+        self.specialty = specialty
+        self.requiredOPME = requiredOPME
+        self.typicalAnesthesia = typicalAnesthesia
     }
 }
 
@@ -55,8 +78,13 @@ extension ProcedureEntity: Decodable {
         case spokenVariations
         case components
         case typicalDurationMinutes
+        case snomedCT
+        case icd10pcs
+        case specialty
+        case requiredOPME
+        case typicalAnesthesia
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let canonical = try container.decode(String.self, forKey: .canonical)
@@ -66,12 +94,25 @@ extension ProcedureEntity: Decodable {
         let durationArray = try container.decodeIfPresent([Int].self, forKey: .typicalDurationMinutes) ?? [30, 240]
         let minDuration = durationArray.first ?? 30
         let maxDuration = durationArray.count > 1 ? durationArray[1] : minDuration
+
+        // Phase 1 enhancements
+        let snomedCT = try container.decodeIfPresent(String.self, forKey: .snomedCT)
+        let icd10pcs = try container.decodeIfPresent([String].self, forKey: .icd10pcs)
+        let specialty = try container.decodeIfPresent(String.self, forKey: .specialty)
+        let requiredOPME = try container.decodeIfPresent([String].self, forKey: .requiredOPME)
+        let typicalAnesthesia = try container.decodeIfPresent(String.self, forKey: .typicalAnesthesia)
+
         self.init(
             canonical: canonical,
             abbreviations: abbreviations,
             spokenVariations: spoken,
             components: components,
-            typicalDuration: minDuration...maxDuration
+            typicalDuration: minDuration...maxDuration,
+            snomedCT: snomedCT,
+            icd10pcs: icd10pcs,
+            specialty: specialty,
+            requiredOPME: requiredOPME,
+            typicalAnesthesia: typicalAnesthesia
         )
     }
 }
