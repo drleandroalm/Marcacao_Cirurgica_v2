@@ -122,11 +122,13 @@ final class MedicalKnowledgeBase {
     private enum Resource: String {
         case surgeons
         case procedures
+        case procedures_enhanced
         case abbreviations
+        case abbreviations_expanded
     }
-    
+
     private final class BundleToken {}
-    
+
     // MARK: - Loaded datasets
     static let surgeons: [SurgeonEntity] = loadSurgeons()
     static let procedures: [ProcedureEntity] = loadProcedures()
@@ -205,13 +207,31 @@ private extension MedicalKnowledgeBase {
     static func loadSurgeons() -> [SurgeonEntity] {
         load([SurgeonEntity].self, resource: .surgeons, fallback: [])
     }
-    
+
     static func loadProcedures() -> [ProcedureEntity] {
-        load([ProcedureEntity].self, resource: .procedures, fallback: [])
+        // Try enhanced version first (Phase 1 with SNOMED-CT, ICD-10, etc.)
+        let enhanced = load([ProcedureEntity].self, resource: .procedures_enhanced, fallback: [])
+        if !enhanced.isEmpty {
+            print("✅ MedicalKnowledgeBase: Loaded \(enhanced.count) procedures from procedures_enhanced.json")
+            return enhanced
+        }
+
+        // Fallback to original version
+        print("⚠️ MedicalKnowledgeBase: Enhanced procedures not found, using original procedures.json")
+        return load([ProcedureEntity].self, resource: .procedures, fallback: [])
     }
-    
+
     static func loadAbbreviations() -> [String: String] {
-        load([String: String].self, resource: .abbreviations, fallback: [:])
+        // Try expanded version first (Phase 1 with 67 abbreviations)
+        let expanded = load([String: String].self, resource: .abbreviations_expanded, fallback: [:])
+        if !expanded.isEmpty {
+            print("✅ MedicalKnowledgeBase: Loaded \(expanded.count) abbreviations from abbreviations_expanded.json")
+            return expanded
+        }
+
+        // Fallback to original version
+        print("⚠️ MedicalKnowledgeBase: Expanded abbreviations not found, using original abbreviations.json")
+        return load([String: String].self, resource: .abbreviations, fallback: [:])
     }
     
     private static func load<T: Decodable>(_ type: T.Type, resource: Resource, fallback: T) -> T {
